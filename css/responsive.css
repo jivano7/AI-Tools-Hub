@@ -1,0 +1,242 @@
+/* ===== HAMBURGER BUTTON ===== */
+.hamburger {
+  display: none;
+    background: none;
+      border: none;
+        font-size: 22px;
+          cursor: pointer;
+            color: var(--text-dark);
+              padding: 4px 8px;
+                border-radius: 8px;
+                  transition: all 0.2s;
+                  }
+
+                  .hamburger:hover {
+                    background: #f3f4f6;
+                    }
+
+                    body.dark-mode .hamburger {
+                      color: #ffffff;
+                      }
+
+                      body.dark-mode .hamburger:hover {
+                        background: #ffffff15;
+                        }
+
+                        /* ===== SIDEBAR OVERLAY ===== */
+                        .sidebar-overlay {
+                          display: none;
+                            position: fixed;
+                              inset: 0;
+                                background: #00000060;
+                                  z-index: 99;
+                                  }
+
+                                  .sidebar-overlay.active {
+                                    display: block;
+                                    }
+
+                                    /* ===== CLOSE BUTTON IN SIDEBAR ===== */
+                                    .sidebar-close {
+                                      display: none;
+                                        background: none;
+                                          border: none;
+                                            color: #9ca3af;
+                                              font-size: 20px;
+                                                cursor: pointer;
+                                                  margin-left: auto;
+                                                    padding: 4px 8px;
+                                                    }
+
+                                                    /* ===========================
+                                                       LARGE DESKTOP — 1400px+
+                                                       =========================== */
+                                                       @media (max-width: 1400px) {
+                                                         .tools-grid {
+                                                             grid-template-columns: repeat(3, 1fr);
+                                                               }
+                                                               }
+
+                                                               /* ===========================
+                                                                  TABLET LANDSCAPE — 1024px
+                                                                  =========================== */
+                                                                  @media (max-width: 1024px) {
+                                                                    .tools-grid {
+                                                                        grid-template-columns: repeat(2, 1fr);
+                                                                          }
+
+                                                                            .navbar {
+                                                                                padding: 0 20px;
+                                                                                  }
+
+                                                                                    .search-bar {
+                                                                                        width: 240px;
+                                                                                          }
+                                                                                          }
+
+                                                                                          /* ===========================
+                                                                                             TABLET — 900px
+                                                                                             =========================== */
+                                                                                             @media (max-width: 900px) {
+
+                                                                                               /* Sidebar hidden by default */
+                                                                                                 .sidebar {
+                                                                                                     transform: translateX(-100%);
+                                                                                                         transition: transform 0.3s ease;
+                                                                                                             z-index: 100;
+                                                                                                               }
+
+                                                                                                                 .sidebar.open {
+                                                                                                                     transform: translateX(0);
+                                                                                                                       }
+
+                                                                                                                         /* Overlay show */
+                                                                                                                           .sidebar-overlay {
+                                                                                                                               display: none;
+                                                                                                                                 }
+
+                                                                                                                                   .sidebar-overlay.active {
+                                                                                                                                       display: block;
+                                                                                                                                         }
+
+                                                                                                                                           /* Close button show */
+                                                                                                                                             .sidebar-close {
+                                                                                                                                                 display: block;
+                                                                                                                                                   }
+
+                                                                                                                                                     /* Sidebar logo row mein close button */
+                                                                                                                                                       .sidebar-logo {
+                                                                                                                                                           display: flex;
+                                                                                                                                                               align-items: center;
+                                                                                                                                                                 }
+
+                                                                                                                                                                   /* Main area full width */
+                                                                                                                                                                     .main-area {
+                                                                                                                                                                         margin-left: 0;
+                                                                                                                                                                           }
+
+                                                                                                                                                                             .navbar {
+                                                                                                                                                                                 margin-left: 0;
+                                                                                                                                                                                   }
+
+                                                                                                                                                                                     /* Hamburger show */
+                                                                                                                                                                                       .hamburger {
+                                                                                                                                                                                           display: block;
+                                                                                                                                                                                             }
+
+                                                                                                                                                                                               /* Search bar thoda chhota */
+                                                                                                                                                                                                 .search-bar {
+                                                                                                                                                                                                     width: 200px;
+                                                                                                                                                                                                       }
+
+                                                                                                                                                                                                         /* Welcome text chhota */
+                                                                                                                                                                                                           .navbar-left h3 {
+                                                                                                                                                                                                               font-size: 13px;
+                                                                                                                                                                                                                 }
+
+                                                                                                                                                                                                                   .navbar-left p {
+                                                                                                                                                                                                                       display: none;
+                                                                                                                                                                                                                         }
+                                                                                                                                                                                                                         }
+
+                                                                                                                                                                                                                         /* ===========================
+                                                                                                                                                                                                                            MOBILE — 640px
+                                                                                                                                                                                                                            =========================== */
+                                                                                                                                                                                                                            @media (max-width: 640px) {
+
+                                                                                                                                                                                                                              /* Navbar */
+                                                                                                                                                                                                                                .navbar {
+                                                                                                                                                                                                                                    padding: 0 16px;
+                                                                                                                                                                                                                                        height: 60px;
+                                                                                                                                                                                                                                            gap: 10px;
+                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                                .navbar-left p {
+                                                                                                                                                                                                                                                    display: none;
+                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                        .navbar-left h3 {
+                                                                                                                                                                                                                                                            font-size: 13px;
+                                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                                                /* Search bar */
+                                                                                                                                                                                                                                                                  .search-bar {
+                                                                                                                                                                                                                                                                      width: 160px;
+                                                                                                                                                                                                                                                                          padding: 6px 12px;
+                                                                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                                                                              /* Hide notification on small screens */
+                                                                                                                                                                                                                                                                                .icon-btn:first-child {
+                                                                                                                                                                                                                                                                                    display: none;
+                                                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                                                        /* Content padding */
+                                                                                                                                                                                                                                                                                          .content {
+                                                                                                                                                                                                                                                                                              padding: 16px;
+                                                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                                                  /* Page Header */
+                                                                                                                                                                                                                                                                                                    .page-header h1 {
+                                                                                                                                                                                                                                                                                                        font-size: 20px;
+                                                                                                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                                                                                                            /* Filter bar wrap */
+                                                                                                                                                                                                                                                                                                              .filter-bar {
+                                                                                                                                                                                                                                                                                                                  flex-direction: column;
+                                                                                                                                                                                                                                                                                                                      align-items: flex-start;
+                                                                                                                                                                                                                                                                                                                          gap: 10px;
+                                                                                                                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                                                                                                                              .filter-buttons {
+                                                                                                                                                                                                                                                                                                                                  flex-wrap: wrap;
+                                                                                                                                                                                                                                                                                                                                      gap: 6px;
+                                                                                                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                                                                                                          .filter-btn {
+                                                                                                                                                                                                                                                                                                                                              padding: 6px 14px;
+                                                                                                                                                                                                                                                                                                                                                  font-size: 12px;
+                                                                                                                                                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                                                                                                                                                      /* Cards — 1 column */
+                                                                                                                                                                                                                                                                                                                                                        .tools-grid {
+                                                                                                                                                                                                                                                                                                                                                            grid-template-columns: 1fr;
+                                                                                                                                                                                                                                                                                                                                                                gap: 14px;
+                                                                                                                                                                                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                                                                                                                                                                                    /* Load more */
+                                                                                                                                                                                                                                                                                                                                                                      .load-more-btn {
+                                                                                                                                                                                                                                                                                                                                                                          width: 100%;
+                                                                                                                                                                                                                                                                                                                                                                              justify-content: center;
+                                                                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                                                                                                                                /* ===========================
+                                                                                                                                                                                                                                                                                                                                                                                   VERY SMALL — 400px
+                                                                                                                                                                                                                                                                                                                                                                                   =========================== */
+                                                                                                                                                                                                                                                                                                                                                                                   @media (max-width: 400px) {
+
+                                                                                                                                                                                                                                                                                                                                                                                     .search-bar {
+                                                                                                                                                                                                                                                                                                                                                                                         width: 130px;
+                                                                                                                                                                                                                                                                                                                                                                                           }
+
+                                                                                                                                                                                                                                                                                                                                                                                             .navbar-left h3 {
+                                                                                                                                                                                                                                                                                                                                                                                                 font-size: 12px;
+                                                                                                                                                                                                                                                                                                                                                                                                   }
+
+                                                                                                                                                                                                                                                                                                                                                                                                     .page-header h1 {
+                                                                                                                                                                                                                                                                                                                                                                                                         font-size: 18px;
+                                                                                                                                                                                                                                                                                                                                                                                                           }
+
+                                                                                                                                                                                                                                                                                                                                                                                                             .tool-card {
+                                                                                                                                                                                                                                                                                                                                                                                                                 padding: 16px;
+                                                                                                                                                                                                                                                                                                                                                                                                                   }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                     .card-actions {
+                                                                                                                                                                                                                                                                                                                                                                                                                         flex-direction: column;
+                                                                                                                                                                                                                                                                                                                                                                                                                           }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                             .bookmark-btn {
+                                                                                                                                                                                                                                                                                                                                                                                                                                 width: 100%;
+                                                                                                                                                                                                                                                                                                                                                                                                                                     height: 36px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                       }
+                                                                                                                                                                                                                                                                                                                                                                                                                                       }

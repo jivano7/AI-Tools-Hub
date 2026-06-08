@@ -1,0 +1,366 @@
+/* ===== ROOT VARIABLES ===== */
+:root {
+  --primary: #6c63ff;
+    --sidebar-bg: #0f0f1a;
+      --sidebar-text: #ffffff;
+        --main-bg: #f5f6fa;
+          --card-bg: #ffffff;
+            --text-dark: #1a1a2e;
+              --text-gray: #6b7280;
+                --border: #e5e7eb;
+                  --star: #f59e0b;
+                  }
+
+                  /* ===== RESET ===== */
+                  * {
+                    margin: 0;
+                      padding: 0;
+                        box-sizing: border-box;
+                          font-family: 'Inter', sans-serif;
+                          }
+
+                          /* ===== LAYOUT ===== */
+                          .app-wrapper {
+                            display: flex;
+                              min-height: 100vh;
+                              }
+
+                              .main-area {
+                                flex: 1;
+                                  display: flex;
+                                    flex-direction: column;
+                                      background: var(--main-bg);
+                                      }
+
+                                      .content {
+                                        padding: 24px;
+                                          flex: 1;
+                                          }
+                                             /* ===== NAVBAR ===== */
+                                             .navbar {
+                                               height: 70px;
+                                                 background: #ffffff;
+                                                   display: flex;
+                                                     align-items: center;
+                                                       justify-content: space-between;
+                                                         padding: 0 28px;
+                                                           border-bottom: 1px solid var(--border);
+                                                             position: sticky;
+                                                               top: 0;
+                                                                 z-index: 99;
+                                                                   margin-left: 240px;
+                                                                   }
+
+                                                                   /* ===== WELCOME TEXT ===== */
+                                                                   .navbar-left h3 {
+                                                                     font-size: 15px;
+                                                                       font-weight: 600;
+                                                                         color: var(--text-dark);
+                                                                         }
+
+                                                                         .navbar-left p {
+                                                                           font-size: 12px;
+                                                                             color: var(--text-gray);
+                                                                               margin-top: 2px;
+                                                                               }
+
+                                                                               /* ===== SEARCH BAR ===== */
+                                                                               .search-bar {
+                                                                                 display: flex;
+                                                                                   align-items: center;
+                                                                                     background: #f3f4f6;
+                                                                                       border-radius: 10px;
+                                                                                         padding: 8px 16px;
+                                                                                           gap: 10px;
+                                                                                             width: 320px;
+                                                                                               border: 1px solid transparent;
+                                                                                                 transition: all 0.2s;
+                                                                                                 }
+
+                                                                                                 .search-bar:focus-within {
+                                                                                                   border-color: #6c63ff;
+                                                                                                     background: #ffffff;
+                                                                                                       box-shadow: 0 0 0 3px #6c63ff20;
+                                                                                                       }
+
+                                                                                                       .search-bar i {
+                                                                                                         color: #9ca3af;
+                                                                                                           font-size: 14px;
+                                                                                                           }
+
+                                                                                                           .search-bar input {
+                                                                                                             border: none;
+                                                                                                               background: none;
+                                                                                                                 outline: none;
+                                                                                                                   font-size: 14px;
+                                                                                                                     color: var(--text-dark);
+                                                                                                                       width: 100%;
+                                                                                                                       }
+
+                                                                                                                       .search-bar input::placeholder {
+                                                                                                                         color: #9ca3af;
+                                                                                                                         }
+
+                                                                                                                         /* ===== NAVBAR RIGHT ICONS ===== */
+                                                                                                                         .navbar-right {
+                                                                                                                           display: flex;
+                                                                                                                             align-items: center;
+                                                                                                                               gap: 16px;
+                                                                                                                               }
+
+                                                                                                                               .icon-btn {
+                                                                                                                                 width: 38px;
+                                                                                                                                   height: 38px;
+                                                                                                                                     border-radius: 10px;
+                                                                                                                                       background: #f3f4f6;
+                                                                                                                                         border: none;
+                                                                                                                                           cursor: pointer;
+                                                                                                                                             display: flex;
+                                                                                                                                               align-items: center;
+                                                                                                                                                 justify-content: center;
+                                                                                                                                                   color: #6b7280;
+                                                                                                                                                     font-size: 16px;
+                                                                                                                                                       position: relative;
+                                                                                                                                                         transition: all 0.2s;
+                                                                                                                                                         }
+
+                                                                                                                                                         .icon-btn:hover {
+                                                                                                                                                           background: #6c63ff;
+                                                                                                                                                             color: white;
+                                                                                                                                                             }
+
+                                                                                                                                                             /* Notification Badge */
+                                                                                                                                                             .icon-btn .badge {
+                                                                                                                                                               position: absolute;
+                                                                                                                                                                 top: -4px;
+                                                                                                                                                                   right: -4px;
+                                                                                                                                                                     width: 16px;
+                                                                                                                                                                       height: 16px;
+                                                                                                                                                                         background: #ef4444;
+                                                                                                                                                                           border-radius: 50%;
+                                                                                                                                                                             font-size: 9px;
+                                                                                                                                                                               color: white;
+                                                                                                                                                                                 display: flex;
+                                                                                                                                                                                   align-items: center;
+                                                                                                                                                                                     justify-content: center;
+                                                                                                                                                                                       font-weight: 700;
+                                                                                                                                                                                       }
+
+                                                                                                                                                                                       /* ===== PROFILE AVATAR ===== */
+                                                                                                                                                                                       .profile-avatar {
+                                                                                                                                                                                         width: 38px;
+                                                                                                                                                                                           height: 38px;
+                                                                                                                                                                                             border-radius: 50%;
+                                                                                                                                                                                               background: #6c63ff;
+                                                                                                                                                                                                 color: white;
+                                                                                                                                                                                                   font-weight: 700;
+                                                                                                                                                                                                     font-size: 15px;
+                                                                                                                                                                                                       display: flex;
+                                                                                                                                                                                                         align-items: center;
+                                                                                                                                                                                                           justify-content: center;
+                                                                                                                                                                                                             cursor: pointer;
+                                                                                                                                                                                                               border: 2px solid #6c63ff40;
+                                                                                                                                                                                                                 transition: all 0.2s;
+                                                                                                                                                                                                                 }
+
+                                                                                                                                                                                                                 .profile-avatar:hover {
+                                                                                                                                                                                                                   border-color: #6c63ff;
+                                                                                                                                                                                                                     transform: scale(1.05);
+                                                                                                                                                                                                                     }
+                                                                                                                                                                                                                      /* ===== MAIN AREA ===== */
+                                                                                                                                                                                                                      .main-area {
+                                                                                                                                                                                                                        margin-left: 240px;
+                                                                                                                                                                                                                          flex: 1;
+                                                                                                                                                                                                                            display: flex;
+                                                                                                                                                                                                                              flex-direction: column;
+                                                                                                                                                                                                                                min-height: 100vh;
+                                                                                                                                                                                                                                  background: #f5f6fa;
+                                                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                                                  .content {
+                                                                                                                                                                                                                                    padding: 28px;
+                                                                                                                                                                                                                                      flex: 1;
+                                                                                                                                                                                                                                      }
+                                                                                                                                                                                                                                      /* ===== DARK MODE ===== */
+                                                                                                                                                                                                                                      body.dark-mode {
+                                                                                                                                                                                                                                        background: #0f0f1a;
+                                                                                                                                                                                                                                          color: #e5e7eb;
+                                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                                          /* Navbar */
+                                                                                                                                                                                                                                          body.dark-mode .navbar {
+                                                                                                                                                                                                                                            background: #1a1a2e;
+                                                                                                                                                                                                                                              border-bottom-color: #ffffff15;
+                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                              body.dark-mode .navbar-left h3 {
+                                                                                                                                                                                                                                                color: #ffffff;
+                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                body.dark-mode .navbar-left p {
+                                                                                                                                                                                                                                                  color: #9ca3af;
+                                                                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                                                                  /* Search Bar */
+                                                                                                                                                                                                                                                  body.dark-mode .search-bar {
+                                                                                                                                                                                                                                                    background: #0f0f1a;
+                                                                                                                                                                                                                                                      border-color: #ffffff20;
+                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                      body.dark-mode .search-bar input {
+                                                                                                                                                                                                                                                        color: #ffffff;
+                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                        body.dark-mode .search-bar input::placeholder {
+                                                                                                                                                                                                                                                          color: #6b7280;
+                                                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                                                          body.dark-mode .search-bar:focus-within {
+                                                                                                                                                                                                                                                            border-color: #6c63ff;
+                                                                                                                                                                                                                                                              background: #1a1a2e;
+                                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                                              /* Icon Buttons */
+                                                                                                                                                                                                                                                              body.dark-mode .icon-btn {
+                                                                                                                                                                                                                                                                background: #0f0f1a;
+                                                                                                                                                                                                                                                                  color: #9ca3af;
+                                                                                                                                                                                                                                                                    border: 1px solid #ffffff15;
+                                                                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                                                                    body.dark-mode .icon-btn:hover {
+                                                                                                                                                                                                                                                                      background: #6c63ff;
+                                                                                                                                                                                                                                                                        color: white;
+                                                                                                                                                                                                                                                                          border-color: #6c63ff;
+                                                                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                                                                          /* Main Area */
+                                                                                                                                                                                                                                                                          body.dark-mode .main-area {
+                                                                                                                                                                                                                                                                            background: #0f0f1a;
+                                                                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                                                                            body.dark-mode .content {
+                                                                                                                                                                                                                                                                              background: #0f0f1a;
+                                                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                                                              /* Page Header */
+                                                                                                                                                                                                                                                                              body.dark-mode .page-header h1 {
+                                                                                                                                                                                                                                                                                color: #ffffff;
+                                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                                body.dark-mode .page-header p {
+                                                                                                                                                                                                                                                                                  color: #9ca3af;
+                                                                                                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                                                                                                  /* Filter Buttons */
+                                                                                                                                                                                                                                                                                  body.dark-mode .filter-btn {
+                                                                                                                                                                                                                                                                                    background: #1a1a2e;
+                                                                                                                                                                                                                                                                                      border-color: #ffffff20;
+                                                                                                                                                                                                                                                                                        color: #9ca3af;
+                                                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                                                        body.dark-mode .filter-btn:hover {
+                                                                                                                                                                                                                                                                                          border-color: #6c63ff;
+                                                                                                                                                                                                                                                                                            color: #6c63ff;
+                                                                                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                                                                                            body.dark-mode .filter-btn.active {
+                                                                                                                                                                                                                                                                                              background: #6c63ff;
+                                                                                                                                                                                                                                                                                                color: white;
+                                                                                                                                                                                                                                                                                                  border-color: #6c63ff;
+                                                                                                                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                                                                                                                  /* Sort Dropdown */
+                                                                                                                                                                                                                                                                                                  body.dark-mode .sort-select {
+                                                                                                                                                                                                                                                                                                    background: #1a1a2e;
+                                                                                                                                                                                                                                                                                                      border-color: #ffffff20;
+                                                                                                                                                                                                                                                                                                        color: #9ca3af;
+                                                                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                                                                        /* Results Count */
+                                                                                                                                                                                                                                                                                                        body.dark-mode .results-count {
+                                                                                                                                                                                                                                                                                                          color: #9ca3af;
+                                                                                                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                                                                                                          /* Tool Cards */
+                                                                                                                                                                                                                                                                                                          body.dark-mode .tool-card {
+                                                                                                                                                                                                                                                                                                            background: #1a1a2e;
+                                                                                                                                                                                                                                                                                                              border-color: #ffffff15;
+                                                                                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                                                                                              body.dark-mode .tool-card:hover {
+                                                                                                                                                                                                                                                                                                                border-color: #6c63ff40;
+                                                                                                                                                                                                                                                                                                                  box-shadow: 0 12px 32px rgba(108, 99, 255, 0.15);
+                                                                                                                                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                                                                                                                                  body.dark-mode .tool-name {
+                                                                                                                                                                                                                                                                                                                    color: #ffffff;
+                                                                                                                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                                                                                                                    body.dark-mode .tool-desc {
+                                                                                                                                                                                                                                                                                                                      color: #9ca3af;
+                                                                                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                                                                                      body.dark-mode .tool-pricing {
+                                                                                                                                                                                                                                                                                                                        color: #9ca3af;
+                                                                                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                                                                                        body.dark-mode .tool-pricing strong {
+                                                                                                                                                                                                                                                                                                                          color: #e5e7eb;
+                                                                                                                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                                                                                                                          body.dark-mode .tool-rating span {
+                                                                                                                                                                                                                                                                                                                            color: #ffffff;
+                                                                                                                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                                                                                                                            body.dark-mode .tool-rating small {
+                                                                                                                                                                                                                                                                                                                              color: #9ca3af;
+                                                                                                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                                                                                                              /* Bookmark Button */
+                                                                                                                                                                                                                                                                                                                              body.dark-mode .bookmark-btn {
+                                                                                                                                                                                                                                                                                                                                background: #0f0f1a;
+                                                                                                                                                                                                                                                                                                                                  border-color: #ffffff20;
+                                                                                                                                                                                                                                                                                                                                    color: #9ca3af;
+                                                                                                                                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                                                                                                                                    body.dark-mode .bookmark-btn:hover,
+                                                                                                                                                                                                                                                                                                                                    body.dark-mode .bookmark-btn.active {
+                                                                                                                                                                                                                                                                                                                                      background: #6c63ff;
+                                                                                                                                                                                                                                                                                                                                        color: white;
+                                                                                                                                                                                                                                                                                                                                          border-color: #6c63ff;
+                                                                                                                                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                                                                                                                                          /* Load More Button */
+                                                                                                                                                                                                                                                                                                                                          body.dark-mode .load-more-btn {
+                                                                                                                                                                                                                                                                                                                                            background: #1a1a2e;
+                                                                                                                                                                                                                                                                                                                                              border-color: #ffffff20;
+                                                                                                                                                                                                                                                                                                                                                color: #6c63ff;
+                                                                                                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                                                                                                body.dark-mode .load-more-btn:hover {
+                                                                                                                                                                                                                                                                                                                                                  background: #6c63ff;
+                                                                                                                                                                                                                                                                                                                                                    color: white;
+                                                                                                                                                                                                                                                                                                                                                      border-color: #6c63ff;
+                                                                                                                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                                                                                                                      /* Empty State */
+                                                                                                                                                                                                                                                                                                                                                      body.dark-mode .tools-grid > div {
+                                                                                                                                                                                                                                                                                                                                                        color: #9ca3af;
+                                                                                                                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                                                                                                                        /* Smooth Transition */
+                                                                                                                                                                                                                                                                                                                                                        body,
+                                                                                                                                                                                                                                                                                                                                                        .navbar,
+                                                                                                                                                                                                                                                                                                                                                        .tool-card,
+                                                                                                                                                                                                                                                                                                                                                        .filter-btn,
+                                                                                                                                                                                                                                                                                                                                                        .search-bar,
+                                                                                                                                                                                                                                                                                                                                                        .sort-select,
+                                                                                                                                                                                                                                                                                                                                                        .icon-btn,
+                                                                                                                                                                                                                                                                                                                                                        .bookmark-btn,
+                                                                                                                                                                                                                                                                                                                                                        .load-more-btn,
+                                                                                                                                                                                                                                                                                                                                                        .main-area,
+                                                                                                                                                                                                                                                                                                                                                        .content {
+                                                                                                                                                                                                                                                                                                                                                          transition: background 0.3s ease, 
+                                                                                                                                                                                                                                                                                                                                                                        color 0.3s ease, 
+                                                                                                                                                                                                                                                                                                                                                                                      border-color 0.3s ease;
+                                                                                                                                                                                                                                                                                                                                                                                      }
