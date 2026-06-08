@@ -28,3 +28,32 @@ import {
                                                 }
 
                                                 });
+                                                const recentTools =
+                                                JSON.parse(
+                                                localStorage.getItem("recentTools")
+                                                ) || [];
+
+                                                const container =
+                                                document.getElementById(
+                                                "recentToolsContainer"
+                                                );
+
+                                                recentTools.forEach(tool => {
+
+                                                container.innerHTML += `
+
+                                                <div class="recent-tool">
+
+                                                    <img
+                                                        src="${tool.logo}"
+                                                            width="40">
+
+                                                                <span>
+                                                                        ${tool.name}
+                                                                            </span>
+
+                                                                            </div>
+
+                                                                            `;
+
+                                                                            });
