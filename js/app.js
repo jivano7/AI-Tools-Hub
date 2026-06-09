@@ -338,32 +338,5 @@ onAuthStateChanged(auth, (user) => {
 });
 
 // Show/hide login-logout buttons
-onAuthStateChanged(auth, (user) => {
-  const loginBtn = document.getElementById('loginBtn');
-  const logoutBtn = document.getElementById('logoutBtn');
-  if (loginBtn && logoutBtn) {
-    if (user) {
-      loginBtn.style.display = 'none';
-      logoutBtn.style.display = 'flex';
-    } else {
-      loginBtn.style.display = 'flex';
-      logoutBtn.style.display = 'none';
-    }
-  }
-});
 
 // Fix logout button visibility
-import { onAuthStateChanged as _authState } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-_authState(auth, (user) => {
-  const logoutBtn = document.getElementById('logoutBtn');
-  const loginBtn = document.getElementById('loginBtn');
-  if (logoutBtn && loginBtn) {
-    if (user) {
-      logoutBtn.style.display = 'block';
-      loginBtn.style.display = 'none';
-    } else {
-      logoutBtn.style.display = 'none';
-      loginBtn.style.display = 'block';
-    }
-  }
-});
