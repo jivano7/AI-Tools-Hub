@@ -449,3 +449,15 @@
     display: none;
   }
 }
+
+.top-navbar {
+  min-height: 70px;
+  align-items: center;
+  padding: 10px 20px;
+  overflow: visible;
+}
+.welcome-section {
+  overflow: visible;
+  white-space: nowrap;
+}
+
