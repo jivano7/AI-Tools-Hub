@@ -336,3 +336,18 @@ onAuthStateChanged(auth, (user) => {
     avatar.textContent = name.charAt(0).toUpperCase();
   }
 });
+
+// Show/hide login-logout buttons
+onAuthStateChanged(auth, (user) => {
+  const loginBtn = document.getElementById('loginBtn');
+  const logoutBtn = document.getElementById('logoutBtn');
+  if (loginBtn && logoutBtn) {
+    if (user) {
+      loginBtn.style.display = 'none';
+      logoutBtn.style.display = 'flex';
+    } else {
+      loginBtn.style.display = 'flex';
+      logoutBtn.style.display = 'none';
+    }
+  }
+});
