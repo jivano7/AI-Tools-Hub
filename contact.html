@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Contact - AI Tools Hub</title>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/sidebar.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body class="dark-mode">
+<div class="layout">
+<aside class="sidebar">
+<div class="sidebar-header">
+<div class="logo"><i class="fas fa-bolt"></i><span>AI Tools Hub</span></div>
+</div>
+<nav class="sidebar-nav">
+<a class="nav-link" href="index.html"><i class="fas fa-th-large"></i> Dashboard</a>
+<a class="nav-link" href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+<a class="nav-link active" href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+</nav>
+</aside>
+<main class="main-content" style="padding:40px">
+<h1 style="color:#667eea">📬 Humse Baat Karo</h1>
+<div style="max-width:600px;margin-top:30px">
+<div style="margin-bottom:20px">
+<label style="color:#fff;display:block;margin-bottom:8px">Aapka Naam</label>
+<input id="cName" type="text" placeholder="Jaise: Rahul Kumar" style="width:100%;padding:12px;border-radius:10px;border:1px solid #444;background:#2a2a3e;color:#fff;font-size:1rem;box-sizing:border-box"/>
+</div>
+<div style="margin-bottom:20px">
+<label style="color:#fff;display:block;margin-bottom:8px">Email</label>
+<input id="cEmail" type="email" placeholder="aapna@email.com" style="width:100%;padding:12px;border-radius:10px;border:1px solid #444;background:#2a2a3e;color:#fff;font-size:1rem;box-sizing:border-box"/>
+</div>
+<div style="margin-bottom:20px">
+<label style="color:#fff;display:block;margin-bottom:8px">Message</label>
+<textarea id="cMsg" placeholder="Apna message likhein..." style="width:100%;padding:12px;border-radius:10px;border:1px solid #444;background:#2a2a3e;color:#fff;font-size:1rem;height:140px;box-sizing:border-box"></textarea>
+</div>
+<button onclick="document.getElementById('cMsg').value='';document.getElementById('cName').value='';document.getElementById('cEmail').value='';document.getElementById('ok').style.display='block'" style="width:100%;padding:14px;background:linear-gradient(135deg,#667eea,#764ba2);color:white;border:none;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer">
+<i class="fas fa-paper-plane"></i> Message Bhejo
+</button>
+<div id="ok" style="display:none;background:#1a4a2e;color:#4ade80;padding:15px;border-radius:10px;margin-top:15px;text-align:center">
+✅ Message mil gaya! Jald reply karenge.
+</div>
+</div>
+</main>
+</div>
+</body>
+</html>
