@@ -461,3 +461,17 @@
   white-space: nowrap;
 }
 
+.profile-avatar {
+      width: 40px;
+          height: 40px;
+              border-radius: 50%;
+                  background: #6c63ff;
+                      color: white;
+                          display: flex;
+                              align-items: center;
+                                  justify-content: center;
+                                      font-weight: bold;
+                                          font-size: 18px;
+                                              text-transform: uppercase;
+                                                  cursor: pointer;
+                                                  }
