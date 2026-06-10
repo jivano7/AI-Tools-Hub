@@ -3,18 +3,25 @@ import { onAuthStateChanged, signOut } from "https://gstatic.com";
 
 // 1. DYNAMIC USER AVATAR & LOGOUT INITIALIZATION
 onAuthStateChanged(auth, (user) => {
-    const avatarElement = document.getElementById("userAvatar") || document.querySelector(".avatar") || document.querySelector("[class*='avatar']");
-    if (user) {
-        const userIdentifier = user.displayName || user.email;
-        if (userIdentifier && avatarElement) {
-            avatarElement.innerText = userIdentifier.charAt(0).toUpperCase();
-        }
-    } else {
-        if (!window.location.href.includes("login.html")) {
-            window.location.href = "login.html";
-        }
-    }
-});
+        const avatarElement = document.getElementById("userAvatar");
+
+            if (!avatarElement) return;
+
+                if (user) {
+                        let firstLetter = "?";
+
+                                if (user.displayName && user.displayName.trim()) {
+                                            firstLetter = user.displayName.trim().charAt(0);
+                                                    } else if (user.email && user.email.trim()) {
+                                                                firstLetter = user.email.trim().charAt(0);
+                                                                        }
+
+                                                                                avatarElement.textContent = firstLetter.toUpperCase();
+                                                                                    } else {
+                                                                                            avatarElement.textContent = "?";
+                                                                                                }
+                                                                                                });
+
 
 // Setup Global Logout Function Trigger
 document.addEventListener("click", async (e) => {
