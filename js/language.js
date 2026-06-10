@@ -1,46 +1,32 @@
 const translations = {
+  en: {
+    welcome: "Welcome Back 👋",
+    subtitle: "Discover the best AI tools."
+  },
+  hi: {
+    welcome: "वापस स्वागत है 👋",
+    subtitle: "सर्वश्रेष्ठ AI टूल्स खोजें।"
+  }
+};
 
-      en: {
-          welcome: "Welcome Back 👋",
-              subtitle: "Discover the best AI tools."
-                },
+const selector = document.getElementById("languageSelector");
 
-                  hi: {
-                      welcome: "वापस स्वागत है 👋",
-                          subtitle: "सर्वश्रेष्ठ AI टूल्स खोजें।"
-                            }
+function applyLanguage(lang) {
+  const welcome = document.getElementById("welcomeText");
+  const subtitle = document.getElementById("subtitleText");
 
-                            };
+  if (welcome) welcome.textContent = translations[lang].welcome;
+  if (subtitle) subtitle.textContent = translations[lang].subtitle;
+}
 
-                            const selector =
-                            document.getElementById("languageSelector");
+if (selector) {
+  selector.addEventListener("change", () => {
+    const lang = selector.value;
+    localStorage.setItem("language", lang);
+    applyLanguage(lang);
+  });
 
-                            function applyLanguage(lang){
-
-                                document.getElementById("welcomeText").textContent =
-                                    translations[lang].welcome;
-
-                                        document.getElementById("subtitleText").textContent =
-                                            translations[lang].subtitle;
-                                            }
-
-                                            selector.addEventListener("change", () => {
-
-                                                const lang = selector.value;
-
-                                                    localStorage.setItem(
-                                                            "language",
-                                                                    lang
-                                                                        );
-
-                                                                            applyLanguage(lang);
-
-                                                                            });
-
-                                                                            const savedLang =
-                                                                            localStorage.getItem("language")
-                                                                            || "en";
-
-                                                                            selector.value = savedLang;
-
-                                                                            applyLanguage(savedLang);
+  const savedLang = localStorage.getItem("language") || "en";
+  selector.value = savedLang;
+  applyLanguage(savedLang);
+}
