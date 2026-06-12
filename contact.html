@@ -43,5 +43,23 @@
 </div>
 </main>
 </div>
-</body>
+<script>
+async function submitForm() {
+  const name = document.getElementById('cName').value.trim();
+  const email = document.getElementById('cEmail').value.trim();
+  const msg = document.getElementById('cMsg').value.trim();
+  if (!name || !email || !msg) { alert('Sabhi fields bharo!'); return; }
+  const res = await fetch('https://formspree.io/f/mjgdarlk', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+    body: JSON.stringify({name, email, message: msg})
+  });
+  if (res.ok) {
+    document.getElementById('ok').style.display = 'block';
+    document.getElementById('cName').value = '';
+    document.getElementById('cEmail').value = '';
+    document.getElementById('cMsg').value = '';
+  } else { alert('Error! Dobara try karo.'); }
+}
+</script></body>
 </html>
