@@ -48,7 +48,7 @@ async function submitForm() {
   const name = document.getElementById('cName').value.trim();
   const email = document.getElementById('cEmail').value.trim();
   const msg = document.getElementById('cMsg').value.trim();
-  if (!name || !email || !msg) { alert('Sabhi fields bharo!'); return; }
+  if (!name || !email || !msg) { alert('fill all fields'); return; }
   const res = await fetch('https://formspree.io/f/mjgdarlk', {
     method: 'POST',
     headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
@@ -59,7 +59,7 @@ async function submitForm() {
     document.getElementById('cName').value = '';
     document.getElementById('cEmail').value = '';
     document.getElementById('cMsg').value = '';
-  } else { alert('Error! Dobara try karo.'); }
+  } else { alert('Error! Try again.'); }
 }
 </script></body>
 </html>
