@@ -475,3 +475,31 @@
                                               text-transform: uppercase;
                                                   cursor: pointer;
                                                   }
+.search-box {
+    display: flex;
+      align-items: center;
+        background: #f3f4f6;
+          border-radius: 10px;
+            padding: 8px 14px;
+              gap: 8px;
+                flex: 1;
+                  max-width: 300px;
+                  }
+
+                  .search-box i {
+                    color: #9ca3af;
+                      font-size: 14px;
+                      }
+
+                      .search-box input {
+                        border: none;
+                          background: transparent;
+                            outline: none;
+                              font-size: 14px;
+                                color: #111;
+                                  width: 100%;
+                                  }
+
+                                  .search-box input::placeholder {
+                                    color: #9ca3af;
+                                    }

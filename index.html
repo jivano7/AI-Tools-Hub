@@ -26,7 +26,7 @@
                                             onclick="toggleSidebar()">
                                               </div>
 
-                                                <!-- baaki sab same -->
+                                                <!-- everythin is same -->
 
                           <!-- LAYOUT WRAPPER -->
                             <div class="app-wrapper">
@@ -108,9 +108,8 @@
                                                                                                                                                                                                                                                                                                                     </a>
                                                                                                                                                                                                                                                                                                                         <a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact
                                                                                                                                                                                                                                                                                                                                   </a>
-                                                                                                                                                                                                                                                                                                                                      <a class="nav-link" id="logoutBtn" href="#" onclick="logoutUser()" style="display:none;color:#ff6b6b"><i class="fas fa-sign-out-alt"></i> Logout</a>
-
-                                                                                                                                                                                                                                                                                                                                    <a class="nav-link" id="logoutBtn" href="#" onclick="logoutUser()" style="display:none;color:#ff6b6b"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                                                                                                                                                                                                                                                                                                                                      <a class="nav-link" id="logoutBtn" href="#" onclick="alert('logout clicked'); logoutUser()"inde style="display:none;color:#ff6b6b"><i class="fas fa-sign-out-alt"></i>Logout
+                                                                                                                                                                                                                                                                                                                                                </a>
 </nav>
 
                                                                                                                                                                                                                                                                                                                                       <!-- Dark Mode Toggle -->
@@ -130,11 +129,12 @@
                                                       <div class="main-area">
 
                                                             <!-- NAVBAR -->
-                                                                  <nav class="navbar">
-                                                                        <select id="languageSelector">
-                                                                              <option value="en">English</option>
-                                                                                  <option value="hi">हिन्दी</option>
-                                                                                  </select>
+
+                                                                 <!-- Search Box -->
+                                                                <div class="search-box">
+                                                                  <i class="fas fa-search"></i>
+                                                                    <input type="text" id="searchInput" placeholder="Search AI tools..." onkeyup="searchTools()">
+                                                                    </div>
 
                                                                               <!-- Hamburger (mobile only) -->
                                                                                 <button class="hamburger" onclick="toggleSidebar()">
@@ -147,17 +147,14 @@
                                                                                                   <p>Discover the best AI tools to boost your productivity.</p>
                                                                                                     </div>
 
-                                                                                                      <!-- baaki sab same rahega -->
+                                                                                                      <!-- Everything else will remain the same -->
 
                                                                               
 
                                                                                                                                       <!-- Right: Icons -->
-                                                                                                                                        <div class="navbar-right">
+                                                                                                                                        <div class="profile-avatar" id="userAvatar" onclick="window.location.href='profile.html'" style="cursor:pointer"></div>
 
                                                                                                                                             <!-- Notification -->
-                                                                                                                                                <button class="icon-btn">
-                                                                                                                                                      <i class="fas fa-bell"></i>
-                                                                                                                                                                </button>
 
                                                                                                                                                                     <!-- Favorites -->
                                                                                                                                                                         <button class="icon-btn" onclick="showFavorites()">
@@ -169,9 +166,7 @@
                                                                                                                                                                                                 <div class="profile-avatar" id="userAvatar" onclick="window.location.href='profile.html'" style="cursor:pointer"></div>
                                                                                                                                                                                                     </a>
 
-                                                                                                                                                                                                      </div>
-
-                                                                                                                                                                                                    <a class="nav-link" id="logoutBtn" href="#" onclick="logoutUser()" style="display:none;color:#ff6b6b"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                                                                                                                                                                                                  </div>
 </nav>
                                                                                 
 
