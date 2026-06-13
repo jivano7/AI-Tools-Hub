@@ -120,3 +120,15 @@
                                                                                                                                                                                                                                                                          await signOut(auth);
                                                                                                                                                                                                                                                                            window.location.href = 'login.html';
                                                                                                                                                                                                                                                                            };
+// ===== UI AUTH STATE =====
+onAuthStateChanged(auth, (user) => {
+  const logoutBtn = document.getElementById('logoutBtn');
+  const loginBtn = document.getElementById('loginBtn');
+  if (user) {
+    if (logoutBtn) logoutBtn.style.display = 'block';
+    if (loginBtn) loginBtn.style.display = 'none';
+  } else {
+    if (logoutBtn) logoutBtn.style.display = 'none';
+    if (loginBtn) loginBtn.style.display = 'block';
+  }
+});
