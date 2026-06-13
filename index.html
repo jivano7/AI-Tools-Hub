@@ -131,8 +131,7 @@
                                                             <!-- NAVBAR -->
                                                              <nav class="navbar">
 
-                                                                 <!-- Search Box -->
-
+                                                               
 
                                                                               <!-- Hamburger (mobile only) -->
                                                                                 <button class="hamburger" onclick="toggleSidebar()">
@@ -147,11 +146,18 @@
 
                                                                                                       <!-- Everything else will remain the same -->
 
+  <!-- Search Box -->
+
+    <div class="search-box">
+    <i class="fas fa-search"></i>
+    <input type="text" id="searchInput" placeholder="Search AI tools..." onkeyup="searchTools()">
+  </div>
                                                                               
-
+    <!-- Language -->
+    
                                                                                                                                       <!-- Right: Icons -->
-                                                                                                                                        <div class="profile-avatar" id="userAvatar" onclick="window.location.href='profile.html'" style="cursor:pointer"></div>
-
+                                                                                                                                        
+  <div class="navbar-right">
                                                                                                                                             <!-- Notification -->
 
                                                                                                                                                                     <!-- Favorites -->
