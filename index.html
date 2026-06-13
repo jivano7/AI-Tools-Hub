@@ -262,19 +262,3 @@ const app = initializeApp({
   authDomain: "ai-tools-hub-28a98.firebaseapp.com",
   projectId: "ai-tools-hub-28a98"
 });
-const auth = getAuth(app);
-
-onAuthStateChanged(auth, (user) => {
-  const logoutBtn = document.getElementById('logoutBtn');
-  const loginBtn = document.getElementById('loginBtn');
-  if (user) {
-    if (logoutBtn) logoutBtn.style.display = 'block';
-    if (loginBtn) loginBtn.style.display = 'none';
-  } else {
-    if (logoutBtn) logoutBtn.style.display = 'none';
-    if (loginBtn) loginBtn.style.display = 'block';
-  }
-});
-</script>
-</body>
- </html>
