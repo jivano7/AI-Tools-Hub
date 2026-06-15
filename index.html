@@ -51,124 +51,130 @@ onclick="toggleSidebar()">
 <div class="logo-text">
 
 <h2>AI Tools Hub</h2>
-
 <span>All AI Tools In One Place</span>
 </div>
 
-    <!-- Close button — mobile only -->
+   <!-- Close button — mobile only -->
 
 <button class="sidebar-close" onclick="toggleSidebar()">
-
 <i class="fas fa-times"></i>
 </button>
 </div>
-
-          <!-- Navigation -->
+        <!-- Navigation -->
 
 <nav class="sidebar-nav">
 
-          <!-- Main -->
+         <!-- Main -->
 
 <span class="nav-section-title">Main</span>
-
 <a class="nav-link active" onclick="filterCategory('all')">
-
 <i class="fas fa-th-large"></i> Dashboard
 </a>
-<a class="nav-link"
+<a class=
 onclick="filterCategory('all')">
-
 <i class="fas fa-robot"></i> All AI Tools
 </a>
-                                                                                                                                <a class="nav-link" onclick="filterFree()">
-                                                                                                                                      <i class="fas fa-tag"></i> Free Tools
-                                                                                                                                          </a>
-                                                                                                                                              <a class="nav-link" onclick="filterPopular()">
-                                                                                                                                                    <i class="fas fa-fire"></i> Popular Tools
-                                                                                                                                                        </a>
-                                                                                                                                                            <a class="nav-link" onclick="showFavorites()">
-                                                                                                                                                                  <i class="fas fa-heart"></i> Favorites
-                                                                                                                                                                      </a>
+<a class="nav-link" onclick="filterFree()">
+<i class="fas fa-tag"></i> Free 
+</a>
+<a class="nav-link" onclick="filterPopular()">
+<i class="fas fa-fire"></i> Popular Tools
+</a>
 
-          <!-- Categories -->
-                                                                                                                                                                              <span class="nav-section-title">Categories</span>
+<a class="nav-link" onclick="showFavorites()">
+<i class="fas fa-heart"></i> 
+</a>
+         <!-- Categories -->
 
-                                                                                                                                                                                  <a class="nav-link" onclick="filterCategory('Chatbots')">
-                                                                                                                                                                                        <i class="fas fa-comments"></i> Chatbots
-                                                                                                                                                                                            </a>
-                                                                                                                                                                                                <a class="nav-link" onclick="filterCategory('Image Generation')">
-                                                                                                                                                                                                      <i class="fas fa-image"></i> Image Generation
-                                                                                                                                                                                                          </a>
-                                                                                                                                                                                                              <a class="nav-link" onclick="filterCategory('Video Generation')">
-                                                                                                                                                                                                                    <i class="fas fa-video"></i> Video Generation
-                                                                                                                                                                                                                        </a>
-                                                                                                                                                                                                                            <a class="nav-link" onclick="filterCategory('Voice Generation')">
-                                                                                                                                                                                                                                  <i class="fas fa-microphone"></i> Voice Generation
-                                                                                                                                                                                                                                      </a>
-                                                                                                                                                                                                                                          <a class="nav-link" onclick="filterCategory('Coding Assistant')">
-                                                                                                                                                                                                                                                <i class="fas fa-code"></i> Coding Assistant
-                                                                                                                                                                                                                                                    </a>
-                                                                                                                                                                                                                                                        <a class="nav-link" onclick="filterCategory('Productivity')">
-                                                                                                                                                                                                                                                              <i class="fas fa-chart-line"></i> Productivity
-                                                                                                                                                                                                                                                                  </a>
-                                                                                                                                                                                                                                                                      <a class="nav-link" onclick="filterCategory('Education')">
-                                                                                                                                                                                                                                                                            <i class="fas fa-graduation-cap"></i> Education
-                                                                                                                                                                                                                                                                                </a>
+<span class="nav-section-title">Categories</span>
+<a class="nav-link" onclick="filterCategory('Chatbots')">
+<i class="fas fa-comments"></i> Chatbots
+</a>
 
+<a class="nav-link" onclick="filterCategory('Image Generation')">
+<i class="fas fa-image"></i> Image Generation
+</a>
+
+<a class="nav-link" onclick="filterCategory('Video Generation')">
+<i class="fas fa-video"></i> Video Generation
+</a>
+
+<a class="nav-link" onclick="filterCategory('Voice Generation')">
+<i class="fas fa-microphone"></i> Voice Generation
+</a>
+
+<a class="nav-link" onclick="filterCategory('Coding Assistant')">
+<i class="fas fa-code"></i> Coding Assistant
+</a>
+
+<a class="nav-link" onclick="filterCategory('Productivity')">
+<i class="fas fa-chart-line"></i> Productivity
+</a>
+
+<a class="nav-link" onclick="filterCategory('Education')">
+<i class="fas fa-graduation-cap"></i> Education
+</a>
           <!-- Pages -->
-                                                                                                                                                                                                                                                                                        <span class="nav-section-title">Pages</span>
 
-                                                                                                                                                                                                                                                                                            <a class="nav-link" id="loginBtn" href="login.html">
-                                                                                                                                                                                                                                                                                                  <i class="fas fa-sign-in-alt"></i> Login
-                                                                                                                                                                                                                                                                                                      </a>
-                                                                                                                                                                                                                                                                                                          <a class="nav-link" href="about.html"><i class="fas fa-info-circle"></i> About Us
-                                                                                                                                                                                                                                                                                                                    </a>
-                                                                                                                                                                                                                                                                                                                        <a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact
-                                                                                                                                                                                                                                                                                                                                  </a>
-                                                                                                                                                                                                                                                                                                                                      <a class="nav-link" id="logoutBtn" href="#" onclick="alert('logout clicked'); logoutUser()"inde style="display:none;color:#ff6b6b"><i class="fas fa-sign-out-alt"></i>Logout
-                                                                                                                                                                                                                                                                                                                                                </a>
+<span class="nav-section-title">Pages</span>
+
+<a class="nav-link" id="loginBtn" href="login.html">
+<i class="fas fa-sign-in-alt"></i> Login
+</a>
+
+<a class="nav-link" href="about.html"><i class="fas fa-info-circle"></i> About Us
+</a>
+
+<a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact
+</a>
+
+<a class="nav-link" id="logoutBtn" href="#" onclick="alert('logout clicked'); logoutUser()"inde style="display:none;color:#ff6b6b"><i class="fas fa-sign-out-alt"></i>Logout
+</a>
+
 </nav>
 
-                                                                                                                                                                                                                                                                                                                                      <!-- Dark Mode Toggle -->
-                                                                                                                                                                                                                                                                                                                                        <div class="sidebar-footer">
-                                                                                                                                                                                                                                                                                                                                            <div class="dark-toggle">
-                                                                                                                                                                                                                                                                                                                                                  <span><i class="fas fa-moon"></i> &nbsp;Dark Mode</span>
-                                                                                                                                                                                                                                                                                                                                                        <div class="toggle-switch" id="darkToggle" onclick="toggleDark()">
-                                                                                                                                                                                                                                                                                                                                                                <div class="toggle-circle"></div>
-                                                                                                                                                                                                                                                                                                                                                                      </div>
-                                                                                                                                                                                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                                                                                                                                                                                            </div>
+      <!-- Dark Mode Toggle -->
 
-                                                                                                                                                                                                                                                                                                                                                                            </aside>
-                                              
+<div class="sidebar-footer">
+<div class="dark-toggle">
+<span><i class="fas fa-moon"></i>
+&nbsp;Dark Mode</span>
+<div class="toggle-switch" id="darkToggle" onclick="toggleDark()">
+<div class="toggle-circle"></div>
+</div>
 
-                                                  <!-- MAIN AREA -->
-                                                      <div class="main-area">
+</aside>
 
-                                                            <!-- NAVBAR -->
-                                                             <nav class="navbar">
+       <!-- MAIN AREA -->
 
-                                                               
+<div class="main-area">
 
-                                                                              <!-- Hamburger (mobile only) -->
-                                                                                <button class="hamburger" onclick="toggleSidebar()">
-                                                                                    <i class="fas fa-bars"></i>
-                                                                                      </button>
+        <!-- NAVBAR -->
 
-                                                                                        <!-- Left: Welcome -->
-                                                                                          <div class="navbar-left">
-                                                                                              <h3>Welcome back! 👋</h3>
-                                                                                                  <p>Discover the best AI tools to boost your productivity.</p>
-                                                                                                    </div>
+<nav class="navbar">
 
-                                                                                                      <!-- Everything else will remain the same -->
+    <!-- Hamburger (mobile only) -->
+
+<button class="hamburger" onclick="toggleSidebar()">
+<i class="fas fa-bars"></i>
+
+</button>
+
+     <!-- Left: Welcome -->
+
+<div class="navbar-left">
+<h3>Welcome back! 👋</h3>
+<p>Discover the best AI tools to boost your productivity.</p>
+</div>
+
+<!-- Everything else will remain the same -->
 
        <!-- Search Box -->
 
-    <div class="search-box">
-    <i class="fas fa-search"></i>
-    <input type="text" id="searchInput" placeholder="Search AI tools..." onkeyup="searchTools()">
-  </div>
+<div class="search-box">
+<i class="fas fa-search"></i>
+<input type="text" id="searchInput" placeholder="Search AI tools..." onkeyup="searchTools()">
+</div>
                                                                               
         <!-- Language -->
     
