@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>AI Tools Hub</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Tools Hub</title>
 
-        <!-- CSS Files -->
-          <link rel="stylesheet" href="css/style.css">
-            <link rel="stylesheet" href="css/sidebar.css">
-              <link rel="stylesheet" href="css/cards.css">
-                <link rel="stylesheet" href="css/responsive.css">
+       <!-- CSS Files -->
+         
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/sidebar.css">
+<link rel="stylesheet" href="css/cards.css">
+<link rel="stylesheet" href="css/responsive.css">
 
-                  <!-- Google Fonts -->
-                    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+       <!-- Google Fonts -->
 
-                      <!-- Icons -->
-                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-                        </head>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-                        <body>
+            <!-- Icons -->
 
-                            <!-- Sidebar Overlay -->
-                              <div class="sidebar-overlay"
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+                      
+</head>
+
+<body>
+
+         <!-- Sidebar Overlay -->
+                    
+<div class="sidebar-overlay"
                                      id="sidebarOverlay"
                                             onclick="toggleSidebar()">
                                               </div>
 
-                                                <!-- everythin is same -->
+      <!-- everythin is same -->
 
-                          <!-- LAYOUT WRAPPER -->
-                            <div class="app-wrapper">
 
-                                <!-- SIDEBAR -->
+        <!-- LAYOUT WRAPPER -->
+
+<div class="app-wrapper">
+
+            <!-- SIDEBAR -->
                                 
                                     
                                            <aside class="sidebar" id="sidebar">
@@ -45,13 +52,13 @@
                                                                   <span>All AI Tools In One Place</span>
                                                                     </div>
 
-                                                                      <!-- Close button — mobile only -->
+    <!-- Close button — mobile only -->
                                                                         <button class="sidebar-close" onclick="toggleSidebar()">
                                                                             <i class="fas fa-times"></i>
                                                                               </button>
                                                                               </div>
 
-                                                                                      <!-- Navigation -->
+          <!-- Navigation -->
                                                                                         <nav class="sidebar-nav">
 
                                                                                             <!-- Main -->
@@ -73,7 +80,7 @@
                                                                                                                                                                   <i class="fas fa-heart"></i> Favorites
                                                                                                                                                                       </a>
 
-                                                                                                                                                                          <!-- Categories -->
+          <!-- Categories -->
                                                                                                                                                                               <span class="nav-section-title">Categories</span>
 
                                                                                                                                                                                   <a class="nav-link" onclick="filterCategory('Chatbots')">
@@ -98,7 +105,7 @@
                                                                                                                                                                                                                                                                             <i class="fas fa-graduation-cap"></i> Education
                                                                                                                                                                                                                                                                                 </a>
 
-                                                                                                                                                                                                                                                                                    <!-- Pages -->
+          <!-- Pages -->
                                                                                                                                                                                                                                                                                         <span class="nav-section-title">Pages</span>
 
                                                                                                                                                                                                                                                                                             <a class="nav-link" id="loginBtn" href="login.html">
@@ -146,26 +153,26 @@
 
                                                                                                       <!-- Everything else will remain the same -->
 
-  <!-- Search Box -->
+       <!-- Search Box -->
 
     <div class="search-box">
     <i class="fas fa-search"></i>
     <input type="text" id="searchInput" placeholder="Search AI tools..." onkeyup="searchTools()">
   </div>
                                                                               
-    <!-- Language -->
+        <!-- Language -->
     
-                                                                                                                                      <!-- Right: Icons -->
-                                                                                                                                        
-  <div class="navbar-right">
-                                                                                                                                            <!-- Notification -->
+       <!-- Right: Icons -->
+                                                                                                                                       <div class="navbar-right">
 
-                                                                                                                                                                    <!-- Favorites -->
+       <!-- Notification -->
+
+        <!-- Favorites -->
                                                                                                                                                                         <button class="icon-btn" onclick="showFavorites()">
                                                                                                                                                                               <i class="fas fa-heart"></i>
                                                                                                                                                                                   </button>
 
-                                                                                                                                                                                      <!-- Profile -->
+        <!-- Profile -->
                                                                                                                                                                                           <a href="profile.html">
                                                                                                                                                                                                 <div class="profile-avatar" id="userAvatar" onclick="window.location.href='profile.html'" style="cursor:pointer"></div>
                                                                                                                                                                                                     </a>
@@ -174,10 +181,10 @@
                                                                                                                                                                                                 </nav>
                                                                                 
 
-                                                                                      <!-- CONTENT -->
+        <!-- CONTENT -->
                                                                                             <main class="content">
 
-                                                                                                     <!-- Topbar -->
+        <!-- Topbar -->
                                                                                                       <div class="user-menu">
 
                                                                                                             <img
@@ -193,13 +200,13 @@
 
                                                                                                                                                             </div>
 
-                                                                                                  <!-- Page Header -->
+        <!-- Page Header -->
                                                                                                     <div class="page-header">
                                                                                                         <h1>All AI Tools Directory</h1>
                                                                                                             <p>Find the best AI tools from various categories. Free, Paid and Freemium – all in one place.</p>
                                                                                                               </div>
 
-                                                                                                                <!-- Filter Bar -->
+      <!-- Filter Bar -->
                                                                                                                   <div class="filter-bar">
                                                                                                                       <div class="filter-buttons">
                                                                                                                             <button class="filter-btn active" onclick="filterPrice('all')">
@@ -217,17 +224,17 @@
                                                                                                                                                                                           </select>
                                                                                                                                                                                             </div>
 
-                                                                                                                                                                                              <!-- Results Count -->
+      <!-- Results Count -->
                                                                                                                                                                                                 <p class="results-count" id="resultsCount">
                                                                                                                                                                                                     Showing <span>1 – 8</span> of <span>70+</span> tools
                                                                                                                                                                                                       </p>
 
-                                                                                                                                                                                                        <!-- Tools Grid -->
+    <!-- Tools Grid -->
                                                                                                                                                                                                           <div class="tools-grid" id="toolsGrid">
                                                                                                                                                                                                               <!-- JavaScript se cards yahan aayenge -->
                                                                                                                                                                                                                 </div>
 
-                                                                                                                                                                                                                  <!-- Load More -->
+     <!-- Load More -->
                                                                                                                                                                                                                     <div class="load-more-wrapper">
                                                                                                                                                                                                                         <button class="load-more-btn" onclick="loadMore()">
                                                                                                                                                                                                                               <i class="fas fa-arrow-down"></i> Load More
@@ -241,15 +248,17 @@
                                                                                                               </div>
                                                                                                                 </div>
 
-                                                                                                                  <!-- JS Files -->
-                                                                                                                    <script src="js/app.js?v=2.0"></script>
-                                                                                                                      <script src="js/search.js"></script>
-                                                                                                                        <script src="js/filter.js"></script>
-                                                                                                                          <script src="js/favorites.js"></script>
-                                                                                                                            <script src="js/language.js"></script>
-                                                                                                                               <script type="module"
-                                                                                                                               src="js/favorites.js">
-                                                                                                                               </script>
+          <!-- JS Files -->
+                                                                                                                    
+
+<script src="js/app.js?v=2.0"></script>
+<script src="js/search.js"></script>
+<script src="js/filter.js"></script>
+<script src="js/favorites.js"></script>
+
+<script type="module">
+  // Firebase code
+</script>
                                                                                                                           
 
                                                                                                                           
