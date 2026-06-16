@@ -215,72 +215,73 @@ alt="User">
 <div class="dropdown-menu">
  <a href="profile.html">
 My Profile
-                                                                                                                                                        </a>
-
-                                                                                                                                                            </div>
+</a>
+</div>
 
         <!-- Page Header -->
-                                                                                                    <div class="page-header">
-                                                                                                        <h1>All AI Tools Directory</h1>
-                                                                                                            <p>Find the best AI tools from various categories. Free, Paid and Freemium – all in one place.</p>
-                                                                                                              </div>
+
+<div class="page-header">
+<h1>All AI Tools Directory</h1>
+<p>Find the best AI tools from various categories. Free, Paid and Freemium – all in one place.</p>
+</div>
 
       <!-- Filter Bar -->
-                                                                                                                  <div class="filter-bar">
-                                                                                                                      <div class="filter-buttons">
-                                                                                                                            <button class="filter-btn active" onclick="filterPrice('all')">
-                                                                                                                                    <i class="fas fa-th"></i> All
-                                                                                                                                          </button>
-                                                                                                                                                <button class="filter-btn" onclick="filterPrice('Free')">Free</button>
-                                                                                                                                                      <button class="filter-btn" onclick="filterPrice('Freemium')">Freemium</button>
-                                                                                                                                                            <button class="filter-btn" onclick="filterPrice('Paid')">Paid</button>
-                                                                                                                                                                </div>
 
-                                                                                                                                                                    <select class="sort-select" onchange="sortTools(this.value)">
-                                                                                                                                                                          <option value="popular">Sort by: Popular</option>
-                                                                                                                                                                                <option value="rating">Sort by: Rating</option>
-                                                                                                                                                                                      <option value="name">Sort by: Name</option>
-                                                                                                                                                                                          </select>
-                                                                                                                                                                                            </div>
+<div class="filter-bar">
+<div class="filter-buttons">
+<button class="filter-btn active" onclick="filterPrice('all')">
+<i class="fas fa-th"></i> All
+</button>
+
+<button class="filter-btn" onclick="filterPrice('Free')">Free</button>
+
+<button class="filter-btn" onclick="filterPrice('Freemium')">Freemium</button>
+                                                                                                                                                            <button class="filter-btn" onclick="filterPrice('Paid')">Paid</button>
+
+</div>
+
+<select class="sort-select" onchange="sortTools(this.value)">
+<option value="popular">Sort by: Popular</option>
+<option value="rating">Sort by: Rating</option>
+<option value="name">Sort by: Name</option>
+</select>
+
+</div>
 
       <!-- Results Count -->
-                                                                                                                                                                                                <p class="results-count" id="resultsCount">
-                                                                                                                                                                                                    Showing <span>1 – 8</span> of <span>70+</span> tools
-                                                                                                                                                                                                      </p>
+
+<p class="results-count" id="resultsCount">
+Showing <span>1 – 8</span> of <span>70+</span> tools
+</p>
 
     <!-- Tools Grid -->
-                                                                                                                                                                                                          <div class="tools-grid" id="toolsGrid">
-                                                                                                                                                                                                              <!-- JavaScript se cards yahan aayenge -->
-                                                                                                                                                                                                                </div>
 
-     <!-- Load More -->
-                                                                                                                                                                                                                    <div class="load-more-wrapper">
-                                                                                                                                                                                                                        <button class="load-more-btn" onclick="loadMore()">
-                                                                                                                                                                                                                              <i class="fas fa-arrow-down"></i> Load More
-                                                                                                                                                                                                                                  </button>
-                                                                                                                                                                                                                                    </div>
+<div class="tools-grid" id="toolsGrid">
 
-                                                                                                                                                                                                                                    </main>
-                                                                                                    
-                                                                                                          
+<!-- JavaScript se cards yahan aayenge -->
 
-                                                                                                              </div>
-                                                                                                                </div>
+</div>
+      <!-- Load More -->
 
-          <!-- JS Files -->
-                                                                                                                    
+<div class="load-more-wrapper">
+<button class="load-more-btn" onclick="loadMore()">
+<i class="fas fa-arrow-down"></i> Load More
+</button>
+</div>
+
+</main>
+</div>
+
+       <!-- JS Files -->
 
 <script src="js/app.js?v=2.0"></script>
 <script src="js/search.js"></script>
 <script src="js/filter.js"></script>
 <script src="js/favorites.js"></script>
-
 <script type="module">
   // Firebase code
 </script>
-                                                                                                                          
 
-                                                                                                                          
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
