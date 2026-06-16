@@ -9,62 +9,57 @@ params.get("id");
 fetch("data/tools.json")
 .then(response => response.json())
 .then(data => {
+const tool =
+data.find(
+item =>
+ item.id == toolId
+ );
+ if(tool){
+ let recentTools =
+JSON.parse(
+localStorage.getItem("recentTools")
+ ) || [];
 
-    const tool =
-        data.find(
-                item =>
-                        item.id == toolId
-                            );
+recentTools =
+recentTools.filter(
+ item => item.id !== tool.id
+  );
+recentTools.unshift(tool);
 
-                                if(tool){
-                                    let recentTools =
-                                    JSON.parse(
-                                    localStorage.getItem("recentTools")
-                                    ) || [];
+recentTools =
+recentTools.slice(0, 10);
+localStorage.setItem(
+"recentTools",
+JSON.stringify(recentTools)
+  );
 
-                                    recentTools =
-                                    recentTools.filter(
-                                    item => item.id !== tool.id
-                                    );
+document
+ .getElementById("toolLogo")
 
-                                    recentTools.unshift(tool);
+ .src = tool.logo;
+document
+ .getElementById("toolName")
+ .textContent = tool.name;
 
-                                    recentTools =
-                                    recentTools.slice(0, 10);
+document
+.getElementById("toolDescription")
+.textContent = tool.description;
 
-                                    localStorage.setItem(
-                                    "recentTools",
-                                    JSON.stringify(recentTools)
-                                    );
+document
+.getElementById("toolCategory")
+.textContent = tool.category;
 
-                                        document
-                                                .getElementById("toolLogo")
-                                                        .src = tool.logo;
+document
+.getElementById("toolPricing")
+.textContent = tool.pricing;
 
-                                                                document
-                                                                        .getElementById("toolName")
-                                                                                .textContent = tool.name;
+document
+.getElementById("toolRating")
+.textContent = tool.rating;
 
-                                                                                        document
-                                                                                                .getElementById("toolDescription")
-                                                                                                        .textContent = tool.description;
+document
+.getElementById("toolWebsite")
+.href = tool.website;
 
-                                                                                                                document
-                                                                                                                        .getElementById("toolCategory")
-                                                                                                                                .textContent = tool.category;
-
-                                                                                                                                        document
-                                                                                                                                                .getElementById("toolPricing")
-                                                                                                                                                        .textContent = tool.pricing;
-
-                                                                                                                                                                document
-                                                                                                                                                                        .getElementById("toolRating")
-                                                                                                                                                                                .textContent = tool.rating;
-
-                                                                                                                                                                                        document
-                                                                                                                                                                                                .getElementById("toolWebsite")
-                                                                                                                                                                                                        .href = tool.website;
-
-                                                                                                                                                                                                            }
-
-                                                                                                                                                                                                            });
+}
+});
