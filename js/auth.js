@@ -127,10 +127,11 @@ window.location.href = 'index.html';
 
            // ===== LOGOUT =====
 
-window.logoutUser = async function () {
-await signOut(auth);
-window.location.href = 'login.html';
- };
+function logout() {
+  signOut(auth).then(() => {
+    localStorage.clear();
+    window.location.href = "login.html";
+  });
 
 // ===== UI AUTH STATE =====
 
