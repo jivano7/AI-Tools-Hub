@@ -6,54 +6,44 @@ import {
   }
   from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
 
-  onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, (user) => {
+if(user){
 
-    if(user){
+document.getElementById('profileName').textContent =
+user.displayName || "User";
 
-        document.getElementById('profileName').textContent =
-            user.displayName || "User";
+document.getElementById('profileEmail').textContent =
+ user.email;
+ if(user.photoURL){
+document.getElementById('profilePhoto').src =
+user.photoURL;
+ }
+} else {
+window.location.href = "login.html";
+ }
+});
+const recentTools =
+JSON.parse(
+localStorage.getItem("recentTools")
+ ) || [];
 
-                document.getElementById('profileEmail').textContent =
-                    user.email;
+const container =
+document.getElementById(
+"recentToolsContainer"
+);
 
-                        if(user.photoURL){
-                              document.getElementById('profilePhoto').src =
-                                    user.photoURL;
-                                        }
+recentTools.forEach(tool => {
+container.innerHTML += `
+<div class="recent-tool">
 
-                                          } else {
+<img
+ src="${tool.logo}"
+ width="40">
+<span>
 
-                                              window.location.href = "login.html";
+${tool.name}
+</span>
+</div>
+`;
 
-                                                }
-
-                                                });
-                                                const recentTools =
-                                                JSON.parse(
-                                                localStorage.getItem("recentTools")
-                                                ) || [];
-
-                                                const container =
-                                                document.getElementById(
-                                                "recentToolsContainer"
-                                                );
-
-                                                recentTools.forEach(tool => {
-
-                                                container.innerHTML += `
-
-                                                <div class="recent-tool">
-
-                                                    <img
-                                                        src="${tool.logo}"
-                                                            width="40">
-
-                                                                <span>
-                                                                        ${tool.name}
-                                                                            </span>
-
-                                                                            </div>
-
-                                                                            `;
-
-                                                                            });
+});
