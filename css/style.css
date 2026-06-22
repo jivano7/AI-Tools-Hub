@@ -54,7 +54,6 @@
 
                                                                    /* ===== WELCOME TEXT ===== */
                                                                    .navbar-left h3 {
-    text-align: center;
                                                                      font-size: 15px;
                                                                        font-weight: 600;
                                                                          color: var(--text-dark);
@@ -197,7 +196,6 @@
                                                                                                                                                                                                                                               }
 
                                                                                                                                                                                                                                               body.dark-mode .navbar-left h3 {
-    text-align: center;
                                                                                                                                                                                                                                                 color: #ffffff;
                                                                                                                                                                                                                                                 }
 
@@ -480,6 +478,8 @@
                                                   cursor: pointer;
                                                   }
 .search-box {
+    flex: 1;
+    max-width: 400px;
     display: flex;
       align-items: center;
         background: #f3f4f6;
