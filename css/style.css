@@ -38,6 +38,7 @@
                                           }
                                              /* ===== NAVBAR ===== */
                                              .navbar {
+    justify-content: space-between;
                                                height: 70px;
                                                  background: #ffffff;
                                                    display: flex;
@@ -53,6 +54,7 @@
 
                                                                    /* ===== WELCOME TEXT ===== */
                                                                    .navbar-left h3 {
+    text-align: center;
                                                                      font-size: 15px;
                                                                        font-weight: 600;
                                                                          color: var(--text-dark);
@@ -189,11 +191,13 @@
 
                                                                                                                                                                                                                                           /* Navbar */
                                                                                                                                                                                                                                           body.dark-mode .navbar {
+    justify-content: space-between;
                                                                                                                                                                                                                                             background: #1a1a2e;
                                                                                                                                                                                                                                               border-bottom-color: #ffffff15;
                                                                                                                                                                                                                                               }
 
                                                                                                                                                                                                                                               body.dark-mode .navbar-left h3 {
+    text-align: center;
                                                                                                                                                                                                                                                 color: #ffffff;
                                                                                                                                                                                                                                                 }
 
@@ -492,6 +496,7 @@
                       }
 
                       .search-box input {
+    width: 300px;
                         border: none;
                           background: transparent;
                             outline: none;
