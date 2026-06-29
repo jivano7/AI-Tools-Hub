@@ -48,19 +48,19 @@ window.loginWithEmail = async function () {
   const password = document.getElementById('loginPassword').value;
 
   if (!email || !password) {
-    showMessage('Email aur password dono bharo');
+    showMessage('Enter both email and password');
     return;
   }
 
   try {
     await signInWithEmailAndPassword(auth, email, password);
-    showMessage('Login ho gaya!', 'success');
+    showMessage('Login successful!', 'success');
     setTimeout(() => window.location.href = 'index.html', 1500);
   } catch (error) {
     if (error.code === 'auth/user-not-found') {
-      showMessage('Yeh email registered nahi hai');
+      showMessage('This email is not registered');
     } else if (error.code === 'auth/wrong-password') {
-      showMessage('Password galat hai');
+      showMessage('wrong Password');
     } else {
       showMessage('Login fail: ' + error.message);
     }
@@ -74,7 +74,7 @@ window.signupWithEmail = async function () {
   const password = document.getElementById('signupPassword').value;
 
   if (!name || !email || !password) {
-    showMessage('Sabhi fields bharo');
+    showMessage('fill all fields');
     return;
   }
 
@@ -82,15 +82,14 @@ window.signupWithEmail = async function () {
     const result = await createUserWithEmailAndPassword(auth, email, password);
     await updateProfile(result.user, { displayName: name });
     await saveUserToFirestore(result.user, name);
-    showMessage('Account ban gaya!', 'success');
+    showMessage('Account created!', 'success');
     setTimeout(() => window.location.href = 'index.html', 1500);
   } catch (error) {
     if (error.code === 'auth/email-already-in-use') {
-      showMessage('Yeh email pehle se registered hai');
+      showMessage('This email is already registered!');
     } else {
       showMessage('Signup fail: ' + error.message);
     }
-  }
 };
 
 // ===== SAVE USER TO FIRESTORE =====
