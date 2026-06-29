@@ -16,9 +16,23 @@ const currentPage = window.location.pathname;
 const publicPages = ['login.html', 'signup.html', 'about.html', 'contact.html'];
 const isPublicPage = publicPages.some(p => currentPage.includes(p));
 
+// ===== MERGED AUTH STATE LISTENER =====
+// FIX: Duplicate onAuthStateChanged merged into one
 onAuthStateChanged(auth, (user) => {
+  // Page protection
   if (!user && !isPublicPage) {
     window.location.href = 'login.html';
+  }
+
+  // UI update
+  const logoutBtn = document.getElementById('logoutBtn');
+  const loginBtn = document.getElementById('loginBtn');
+  if (user) {
+    if (logoutBtn) logoutBtn.style.display = 'block';
+    if (loginBtn) loginBtn.style.display = 'none';
+  } else {
+    if (logoutBtn) logoutBtn.style.display = 'none';
+    if (loginBtn) loginBtn.style.display = 'block';
   }
 });
 
@@ -38,17 +52,20 @@ window.loginWithGoogle = async function () {
     showMessage('Login successful!', 'success');
     setTimeout(() => window.location.href = 'index.html', 1500);
   } catch (error) {
-    showMessage('Google login fail: ' + error.message);
+    // FIX: No error.message exposed to user
+    console.error('Google login error:', error);
+    showMessage('Google login failed. Please try again.', 'error');
   }
 };
 
 // ===== EMAIL LOGIN =====
 window.loginWithEmail = async function () {
   const email = document.getElementById('loginEmail').value.trim();
-  const password = document.getElementById('loginPassword').value;
+  // FIX: Added .trim() to password as well
+  const password = document.getElementById('loginPassword').value.trim();
 
   if (!email || !password) {
-    showMessage('Enter both email and password');
+    showMessage('Please enter email and password');
     return;
   }
 
@@ -57,12 +74,16 @@ window.loginWithEmail = async function () {
     showMessage('Login successful!', 'success');
     setTimeout(() => window.location.href = 'index.html', 1500);
   } catch (error) {
-    if (error.code === 'auth/user-not-found') {
-      showMessage('This email is not registered');
+    console.error('Email login error:', error);
+    // FIX: Updated deprecated error codes + no error.message to user
+    if (error.code === 'auth/invalid-credential' || error.code === 'auth/user-not-found') {
+      showMessage('Invalid email or password. Please try again.');
     } else if (error.code === 'auth/wrong-password') {
-      showMessage('wrong Password');
+      showMessage('Invalid email or password. Please try again.');
+    } else if (error.code === 'auth/too-many-requests') {
+      showMessage('Too many attempts. Please try again later.');
     } else {
-      showMessage('Login fail: ' + error.message);
+      showMessage('Login failed. Please try again.');
     }
   }
 };
@@ -71,10 +92,10 @@ window.loginWithEmail = async function () {
 window.signupWithEmail = async function () {
   const name = document.getElementById('signupName').value.trim();
   const email = document.getElementById('signupEmail').value.trim();
-  const password = document.getElementById('signupPassword').value;
+  const password = document.getElementById('signupPassword').value.trim();
 
   if (!name || !email || !password) {
-    showMessage('fill all fields');
+    showMessage('Please fill all fields');
     return;
   }
 
@@ -82,14 +103,19 @@ window.signupWithEmail = async function () {
     const result = await createUserWithEmailAndPassword(auth, email, password);
     await updateProfile(result.user, { displayName: name });
     await saveUserToFirestore(result.user, name);
-    showMessage('Account created!', 'success');
+    showMessage('Account created successfully!', 'success');
     setTimeout(() => window.location.href = 'index.html', 1500);
   } catch (error) {
+    console.error('Signup error:', error);
+    // FIX: No error.message exposed to user
     if (error.code === 'auth/email-already-in-use') {
-      showMessage('This email is already registered!');
+      showMessage('This email is already registered.');
+    } else if (error.code === 'auth/weak-password') {
+      showMessage('Password must be at least 6 characters.');
     } else {
-      showMessage('Signup fail: ' + error.message);
+      showMessage('Signup failed. Please try again.');
     }
+  }
 };
 
 // ===== SAVE USER TO FIRESTORE =====
@@ -99,7 +125,8 @@ async function saveUserToFirestore(user, name = null) {
   if (!snap.exists()) {
     await setDoc(userRef, {
       uid: user.uid,
-      name: name || user.displayName || 'User',
+      // FIX: Stronger name fallback with trim check
+      name: (name && name.trim()) || user.displayName || 'User',
       email: user.email,
       photoURL: user.photoURL || '',
       favorites: [],
@@ -117,19 +144,7 @@ window.togglePassword = function (inputId) {
 // ===== LOGOUT =====
 window.logoutUser = async function () {
   await signOut(auth);
-  localStorage.clear();
+  // FIX: localStorage.clear() removed — only specific keys should be cleared
+  // localStorage.removeItem('yourSpecificKey'); // uncomment if needed
   window.location.href = 'login.html';
 };
-
-// ===== UI AUTH STATE =====
-onAuthStateChanged(auth, (user) => {
-  const logoutBtn = document.getElementById('logoutBtn');
-  const loginBtn = document.getElementById('loginBtn');
-  if (user) {
-    if (logoutBtn) logoutBtn.style.display = 'block';
-    if (loginBtn) loginBtn.style.display = 'none';
-  } else {
-    if (logoutBtn) logoutBtn.style.display = 'none';
-    if (loginBtn) loginBtn.style.display = 'block';
-  }
-});
