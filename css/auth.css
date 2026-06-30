@@ -1,349 +1,383 @@
 /* ===== AUTH PAGE ===== */
 .auth-page {
   margin: 0;
-    padding: 0;
-      background: #0f0f1a;
-        min-height: 100vh;
-        }
+  padding: 0;
+  background: #0f0f1a;
+  min-height: 100vh;
+}
 
-        .auth-wrapper {
-          display: flex;
-            min-height: 100vh;
-            }
+.auth-wrapper {
+  display: flex;
+  min-height: 100vh;
+  align-items: stretch; /* FIX: was missing */
+}
 
-            /* ===== LEFT SIDE ===== */
-            .auth-left {
-              flex: 1;
-                background: linear-gradient(135deg, #6c63ff, #a78bfa);
-                  padding: 60px;
-                    display: flex;
-                      flex-direction: column;
-                        justify-content: center;
-                          color: white;
-                          }
+/* ===== LEFT SIDE ===== */
+.auth-left {
+  flex: 1;
+  background: linear-gradient(135deg, #6c63ff, #a78bfa);
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
 
-                          .auth-logo {
-                            display: flex;
-                              align-items: center;
-                                gap: 12px;
-                                  margin-bottom: 48px;
-                                  }
+.auth-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 48px;
+}
 
-                                  .auth-logo .logo-icon {
-                                    width: 42px;
-                                      height: 42px;
-                                        background: #ffffff30;
-                                          border-radius: 12px;
-                                            display: flex;
-                                              align-items: center;
-                                                justify-content: center;
-                                                  font-size: 20px;
-                                                  }
+.auth-logo .logo-icon {
+  width: 42px;
+  height: 42px;
+  background: #ffffff30;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
 
-                                                  .auth-logo h2 {
-                                                    font-size: 18px;
-                                                      font-weight: 700;
-                                                      }
+.auth-logo h2 {
+  font-size: 18px;
+  font-weight: 700;
+}
 
-                                                      .auth-left h1 {
-                                                        font-size: 38px;
-                                                          font-weight: 800;
-                                                            line-height: 1.2;
-                                                              margin-bottom: 16px;
-                                                              }
+.auth-left h1 {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
 
-                                                              .auth-left p {
-                                                                font-size: 16px;
-                                                                  opacity: 0.85;
-                                                                    margin-bottom: 40px;
-                                                                      line-height: 1.6;
-                                                                      }
+.auth-left p {
+  font-size: 16px;
+  opacity: 0.85;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
 
-                                                                      .auth-features {
-                                                                        display: flex;
-                                                                          flex-direction: column;
-                                                                            gap: 14px;
-                                                                            }
+.auth-features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
 
-                                                                            .auth-feature {
-                                                                              display: flex;
-                                                                                align-items: center;
-                                                                                  gap: 12px;
-                                                                                    font-size: 15px;
-                                                                                      opacity: 0.9;
-                                                                                      }
+.auth-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  opacity: 0.9;
+}
 
-                                                                                      .auth-feature i {
-                                                                                        font-size: 18px;
-                                                                                          color: #ffffff;
-                                                                                          }
+.auth-feature i {
+  font-size: 18px;
+  color: #ffffff;
+}
 
-                                                                                          /* ===== RIGHT SIDE ===== */
-                                                                                          .auth-right {
-                                                                                            width: 480px;
-                                                                                              background: #ffffff;
-                                                                                                display: flex;
-                                                                                                  align-items: center;
-                                                                                                    justify-content: center;
-                                                                                                      padding: 40px;
-                                                                                                      }
+/* ===== RIGHT SIDE ===== */
+.auth-right {
+  width: 100%;          /* FIX: was fixed 480px — mobile pe toot raha tha */
+  max-width: 480px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
 
-                                                                                                      .auth-card {
-                                                                                                        width: 100%;
-                                                                                                          max-width: 380px;
-                                                                                                          }
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+}
 
-                                                                                                          .auth-card h2 {
-                                                                                                            font-size: 24px;
-                                                                                                              font-weight: 700;
-                                                                                                                color: #1a1a2e;
-                                                                                                                  margin-bottom: 6px;
-                                                                                                                  }
+.auth-card h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 6px;
+}
 
-                                                                                                                  .auth-subtitle {
-                                                                                                                    color: #9ca3af;
-                                                                                                                      font-size: 14px;
-                                                                                                                        margin-bottom: 24px;
-                                                                                                                        }
+/* ===== SUBTITLE ===== */
+.auth-subtitle {
+  color: #9ca3af;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
 
-                                                                                                                        /* ===== MESSAGE ===== */
-                                                                                                                        .auth-message {
-                                                                                                                          padding: 0;
-                                                                                                                            border-radius: 8px;
-                                                                                                                              font-size: 13px;
-                                                                                                                                margin-bottom: 0;
-                                                                                                                                  display: none;
-                                                                                                                                  }
+/* ===== MESSAGE ===== */
+.auth-message {
+  /* FIX: removed padding: 0 — it was overriding error/success padding */
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 0;
+  display: none;
+}
 
-                                                                                                                                  .auth-message.error {
-                                                                                                                                    background: #fee2e2;
-                                                                                                                                      color: #dc2626;
-                                                                                                                                        padding: 10px 14px;
-                                                                                                                                          margin-bottom: 16px;
-                                                                                                                                            display: block;
-                                                                                                                                            }
+.auth-message.error {
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  display: block;
+}
 
-                                                                                                                                            .auth-message.success {
-                                                                                                                                              background: #d1fae5;
-                                                                                                                                                color: #059669;
-                                                                                                                                                  padding: 10px 14px;
-                                                                                                                                                    margin-bottom: 16px;
-                                                                                                                                                      display: block;
-                                                                                                                                                      }
+.auth-message.success {
+  background: #d1fae5;
+  color: #059669;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  display: block;
+}
 
-                                                                                                                                                      /* ===== GOOGLE BUTTON ===== */
-                                                                                                                                                      .google-btn {
-                                                                                                                                                        width: 100%;
-                                                                                                                                                          padding: 12px;
-                                                                                                                                                            border: 1px solid #e5e7eb;
-                                                                                                                                                              border-radius: 10px;
-                                                                                                                                                                background: white;
-                                                                                                                                                                  display: flex;
-                                                                                                                                                                    align-items: center;
-                                                                                                                                                                      justify-content: center;
-                                                                                                                                                                        gap: 10px;
-                                                                                                                                                                          font-size: 14px;
-                                                                                                                                                                            font-weight: 600;
-                                                                                                                                                                              color: #374151;
-                                                                                                                                                                                cursor: pointer;
-                                                                                                                                                                                  transition: all 0.2s;
-                                                                                                                                                                                    margin-bottom: 20px;
-                                                                                                                                                                                    }
+/* ===== GOOGLE BUTTON ===== */
+.google-btn {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s; /* FIX: specific transition, not 'all' */
+  margin-bottom: 20px;
+}
 
-                                                                                                                                                                                    .google-btn img {
-                                                                                                                                                                                      width: 20px;
-                                                                                                                                                                                        height: 20px;
-                                                                                                                                                                                        }
+.google-btn img {
+  width: 20px;
+  height: 20px;
+}
 
-                                                                                                                                                                                        .google-btn:hover {
-                                                                                                                                                                                          background: #f9fafb;
-                                                                                                                                                                                            border-color: #6c63ff;
-                                                                                                                                                                                              box-shadow: 0 0 0 3px #6c63ff15;
-                                                                                                                                                                                              }
+.google-btn:hover {
+  background: #f9fafb;
+  border-color: #6c63ff;
+  box-shadow: 0 0 0 3px #6c63ff15;
+}
 
-                                                                                                                                                                                              /* ===== DIVIDER ===== */
-                                                                                                                                                                                              .divider {
-                                                                                                                                                                                                display: flex;
-                                                                                                                                                                                                  align-items: center;
-                                                                                                                                                                                                    gap: 12px;
-                                                                                                                                                                                                      margin-bottom: 20px;
-                                                                                                                                                                                                        color: #9ca3af;
-                                                                                                                                                                                                          font-size: 13px;
-                                                                                                                                                                                                          }
+/* ===== DIVIDER ===== */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: #9ca3af;
+  font-size: 13px;
+}
 
-                                                                                                                                                                                                          .divider::before,
-                                                                                                                                                                                                          .divider::after {
-                                                                                                                                                                                                            content: '';
-                                                                                                                                                                                                              flex: 1;
-                                                                                                                                                                                                                height: 1px;
-                                                                                                                                                                                                                  background: #e5e7eb;
-                                                                                                                                                                                                                  }
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;           /* FIX: explicit height — some browsers need this */
+  background: #e5e7eb;
+}
 
-                                                                                                                                                                                                                  /* ===== FORM ===== */
-                                                                                                                                                                                                                  .auth-form {
-                                                                                                                                                                                                                    display: flex;
-                                                                                                                                                                                                                      flex-direction: column;
-                                                                                                                                                                                                                        gap: 16px;
-                                                                                                                                                                                                                        }
+/* ===== FORM ===== */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
-                                                                                                                                                                                                                        .form-group {
-                                                                                                                                                                                                                          display: flex;
-                                                                                                                                                                                                                            flex-direction: column;
-                                                                                                                                                                                                                              gap: 6px;
-                                                                                                                                                                                                                              }
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 
-                                                                                                                                                                                                                              .form-group label {
-                                                                                                                                                                                                                                font-size: 13px;
-                                                                                                                                                                                                                                  font-weight: 600;
-                                                                                                                                                                                                                                    color: #374151;
-                                                                                                                                                                                                                                    }
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
 
-                                                                                                                                                                                                                                    .input-wrapper {
-                                                                                                                                                                                                                                      display: flex;
-                                                                                                                                                                                                                                        align-items: center;
-                                                                                                                                                                                                                                          border: 1px solid #e5e7eb;
-                                                                                                                                                                                                                                            border-radius: 10px;
-                                                                                                                                                                                                                                              padding: 10px 14px;
-                                                                                                                                                                                                                                                gap: 10px;
-                                                                                                                                                                                                                                                  transition: all 0.2s;
-                                                                                                                                                                                                                                                  }
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 14px;
+  gap: 10px;
+  transition: border-color 0.2s, box-shadow 0.2s; /* FIX: specific, not 'all' */
+}
 
-                                                                                                                                                                                                                                                  .input-wrapper:focus-within {
-                                                                                                                                                                                                                                                    border-color: #6c63ff;
-                                                                                                                                                                                                                                                      box-shadow: 0 0 0 3px #6c63ff20;
-                                                                                                                                                                                                                                                      }
+.input-wrapper:focus-within {
+  border-color: #6c63ff;
+  box-shadow: 0 0 0 3px #6c63ff20;
+}
 
-                                                                                                                                                                                                                                                      .input-wrapper i {
-                                                                                                                                                                                                                                                        color: #9ca3af;
-                                                                                                                                                                                                                                                          font-size: 14px;
-                                                                                                                                                                                                                                                            width: 16px;
-                                                                                                                                                                                                                                                            }
+.input-wrapper i {
+  color: #9ca3af;
+  font-size: 14px;
+  width: 16px;
+}
 
-                                                                                                                                                                                                                                                            .input-wrapper input {
-                                                                                                                                                                                                                                                              flex: 1;
-                                                                                                                                                                                                                                                                border: none;
-                                                                                                                                                                                                                                                                  outline: none;
-                                                                                                                                                                                                                                                                    font-size: 14px;
-                                                                                                                                                                                                                                                                      color: #1a1a2e;
-                                                                                                                                                                                                                                                                        background: none;
-                                                                                                                                                                                                                                                                        }
+.input-wrapper input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #1a1a2e;
+  background: none;
+}
 
-                                                                                                                                                                                                                                                                        .input-wrapper input::placeholder {
-                                                                                                                                                                                                                                                                          color: #d1d5db;
-                                                                                                                                                                                                                                                                          }
+.input-wrapper input::placeholder {
+  color: #d1d5db;
+}
 
-                                                                                                                                                                                                                                                                          /* ===== TOGGLE PASSWORD ===== */
-                                                                                                                                                                                                                                                                          .toggle-pass {
-                                                                                                                                                                                                                                                                            background: none;
-                                                                                                                                                                                                                                                                              border: none;
-                                                                                                                                                                                                                                                                                color: #9ca3af;
-                                                                                                                                                                                                                                                                                  cursor: pointer;
-                                                                                                                                                                                                                                                                                    font-size: 14px;
-                                                                                                                                                                                                                                                                                      padding: 0;
-                                                                                                                                                                                                                                                                                      }
+/* ===== TOGGLE PASSWORD ===== */
+.toggle-pass {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  transition: color 0.2s;
+}
 
-                                                                                                                                                                                                                                                                                      .toggle-pass:hover {
-                                                                                                                                                                                                                                                                                        color: #6c63ff;
-                                                                                                                                                                                                                                                                                        }
+.toggle-pass:hover {
+  color: #6c63ff;
+}
 
-                                                                                                                                                                                                                                                                                        /* ===== FORM ROW ===== */
-                                                                                                                                                                                                                                                                                        .form-row {
-                                                                                                                                                                                                                                                                                          display: flex;
-                                                                                                                                                                                                                                                                                            align-items: center;
-                                                                                                                                                                                                                                                                                              justify-content: space-between;
-                                                                                                                                                                                                                                                                                              }
+/* ===== FORM ROW ===== */
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-                                                                                                                                                                                                                                                                                              .checkbox-label {
-                                                                                                                                                                                                                                                                                                display: flex;
-                                                                                                                                                                                                                                                                                                  align-items: center;
-                                                                                                                                                                                                                                                                                                    gap: 6px;
-                                                                                                                                                                                                                                                                                                      font-size: 13px;
-                                                                                                                                                                                                                                                                                                        color: #6b7280;
-                                                                                                                                                                                                                                                                                                          cursor: pointer;
-                                                                                                                                                                                                                                                                                                          }
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #6b7280;
+  cursor: pointer;
+}
 
-                                                                                                                                                                                                                                                                                                          .forgot-link {
-                                                                                                                                                                                                                                                                                                            font-size: 13px;
-                                                                                                                                                                                                                                                                                                              color: #6c63ff;
-                                                                                                                                                                                                                                                                                                                text-decoration: none;
-                                                                                                                                                                                                                                                                                                                  font-weight: 500;
-                                                                                                                                                                                                                                                                                                                  }
+.forgot-link {
+  font-size: 13px;
+  color: #6c63ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
 
-                                                                                                                                                                                                                                                                                                                  .forgot-link:hover {
-                                                                                                                                                                                                                                                                                                                    text-decoration: underline;
-                                                                                                                                                                                                                                                                                                                    }
+.forgot-link:hover {
+  text-decoration: underline;
+  color: #5a52d5;
+}
 
-                                                                                                                                                                                                                                                                                                                    /* ===== AUTH BUTTON ===== */
-                                                                                                                                                                                                                                                                                                                    .auth-btn {
-                                                                                                                                                                                                                                                                                                                      width: 100%;
-                                                                                                                                                                                                                                                                                                                        padding: 12px;
-                                                                                                                                                                                                                                                                                                                          background: #6c63ff;
-                                                                                                                                                                                                                                                                                                                            color: white;
-                                                                                                                                                                                                                                                                                                                              border: none;
-                                                                                                                                                                                                                                                                                                                                border-radius: 10px;
-                                                                                                                                                                                                                                                                                                                                  font-size: 15px;
-                                                                                                                                                                                                                                                                                                                                    font-weight: 600;
-                                                                                                                                                                                                                                                                                                                                      cursor: pointer;
-                                                                                                                                                                                                                                                                                                                                        transition: all 0.2s;
-                                                                                                                                                                                                                                                                                                                                          display: flex;
-                                                                                                                                                                                                                                                                                                                                            align-items: center;
-                                                                                                                                                                                                                                                                                                                                              justify-content: center;
-                                                                                                                                                                                                                                                                                                                                                gap: 8px;
-                                                                                                                                                                                                                                                                                                                                                  margin-top: 4px;
-                                                                                                                                                                                                                                                                                                                                                  }
+/* ===== AUTH BUTTON ===== */
+.auth-btn {
+  width: 100%;
+  padding: 13px;         /* FIX: slightly more padding for better feel */
+  background: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s; /* FIX: specific transition */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;      /* FIX: was 4px — too small */
+}
 
-                                                                                                                                                                                                                                                                                                                                                  .auth-btn:hover {
-                                                                                                                                                                                                                                                                                                                                                    background: #5b52e0;
-                                                                                                                                                                                                                                                                                                                                                      transform: translateY(-1px);
-                                                                                                                                                                                                                                                                                                                                                        box-shadow: 0 4px 16px #6c63ff40;
-                                                                                                                                                                                                                                                                                                                                                        }
+.auth-btn:hover {
+  background: #5a52d5;
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);
+  transform: translateY(-1px);
+}
 
-                                                                                                                                                                                                                                                                                                                                                        .auth-btn:disabled {
-                                                                                                                                                                                                                                                                                                                                                          background: #9ca3af;
-                                                                                                                                                                                                                                                                                                                                                            cursor: not-allowed;
-                                                                                                                                                                                                                                                                                                                                                              transform: none;
-                                                                                                                                                                                                                                                                                                                                                              }
+.auth-btn:active {
+  transform: translateY(0); /* FIX: click feel added */
+  box-shadow: none;
+}
 
-                                                                                                                                                                                                                                                                                                                                                              /* ===== SWITCH LINK ===== */
-                                                                                                                                                                                                                                                                                                                                                              .auth-switch {
-                                                                                                                                                                                                                                                                                                                                                                text-align: center;
-                                                                                                                                                                                                                                                                                                                                                                  margin-top: 24px;
-                                                                                                                                                                                                                                                                                                                                                                    font-size: 14px;
-                                                                                                                                                                                                                                                                                                                                                                      color: #6b7280;
-                                                                                                                                                                                                                                                                                                                                                                      }
+/* ===== SIGN UP LINK ===== */
+.auth-switch {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #6b7280;
+}
 
-                                                                                                                                                                                                                                                                                                                                                                      .auth-switch a {
-                                                                                                                                                                                                                                                                                                                                                                        color: #6c63ff;
-                                                                                                                                                                                                                                                                                                                                                                          font-weight: 600;
-                                                                                                                                                                                                                                                                                                                                                                            text-decoration: none;
-                                                                                                                                                                                                                                                                                                                                                                            }
+.auth-switch a {
+  color: #6c63ff;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 4px;
+}
 
-                                                                                                                                                                                                                                                                                                                                                                            .auth-switch a:hover {
-                                                                                                                                                                                                                                                                                                                                                                              text-decoration: underline;
-                                                                                                                                                                                                                                                                                                                                                                              }
+.auth-switch a:hover {
+  text-decoration: underline;
+}
 
-                                                                                                                                                                                                                                                                                                                                                                              /* ===== RESPONSIVE ===== */
-                                                                                                                                                                                                                                                                                                                                                                              @media (max-width: 768px) {
-                                                                                                                                                                                                                                                                                                                                                                                .auth-left {
-                                                                                                                                                                                                                                                                                                                                                                                    display: none;
-                                                                                                                                                                                                                                                                                                                                                                                      }
+/* ===== MOBILE RESPONSIVE ===== */
+/* FIX: Ye poora section missing tha — isliye mobile pe layout toot raha tha */
+@media (max-width: 768px) {
+  .auth-wrapper {
+    flex-direction: column;
+  }
 
-                                                                                                                                                                                                                                                                                                                                                                                        .auth-right {
-                                                                                                                                                                                                                                                                                                                                                                                            width: 100%;
-                                                                                                                                                                                                                                                                                                                                                                                                padding: 32px 24px;
-                                                                                                                                                                                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                        
-                                                                                                                                                                                                                                                                                                                                                                                                          
-                                                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                          
-                                                                                                                                                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                                                                                                                                                      
-                                                                                                                                                                                                                              
+  .auth-left {
+    display: none; /* Mobile pe left panel hide — cleaner experience */
+  }
+
+  .auth-right {
+    max-width: 100%;
+    min-height: 100vh;
+    padding: 32px 20px;
+    align-items: flex-start;
+    padding-top: 60px;
+  }
+
+  .auth-card {
+    max-width: 100%;
+  }
+
+  .auth-card h2 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-right {
+    padding: 24px 16px;
+    padding-top: 48px;
+  }
+
+  .auth-btn {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    transform: none !important;
+  }
+}
