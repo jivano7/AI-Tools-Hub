@@ -1,334 +1,740 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Tools Hub — Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0d0d1a;
+      color: #fff;
+      min-height: 100vh;
+    }
 
-<title>Login - AI Tools Hub</title>
+    /* ── NAVBAR ── */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 40px;
+      position: relative;
+      z-index: 10;
+    }
 
-<link rel="stylesheet" href="css/auth.css">
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    .nav-logo .logo-box {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #7c3aed, #a855f7);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    .nav-right {
+      font-size: 14px;
+      color: #9ca3af;
+    }
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    .nav-right a {
+      color: #a855f7;
+      font-weight: 600;
+      text-decoration: none;
+      margin-left: 6px;
+    }
 
+    .nav-right a:hover { text-decoration: underline; }
+
+    /* ── MAIN LAYOUT ── */
+    .page-wrapper {
+      display: flex;
+      min-height: calc(100vh - 72px);
+      padding: 20px 40px 40px;
+      gap: 40px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ── LEFT SIDE ── */
+    .left-side {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+
+    /* Trusted badge */
+    .trusted-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #ffffff0d;
+      border: 1px solid #ffffff15;
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 13px;
+      color: #d1d5db;
+      margin-bottom: 28px;
+      width: fit-content;
+    }
+
+    .avatar-stack {
+      display: flex;
+    }
+
+    .avatar-stack img,
+    .avatar-stack .av {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 2px solid #0d0d1a;
+      margin-left: -8px;
+      object-fit: cover;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+
+    .avatar-stack .av:first-child { margin-left: 0; }
+    .av1 { background: #7c3aed; }
+    .av2 { background: #2563eb; }
+    .av3 { background: #059669; }
+
+    .badge-count {
+      font-weight: 700;
+      color: #fff;
+      font-size: 13px;
+    }
+
+    /* Hero headline */
+    .hero-title {
+      font-size: 52px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .hero-title .highlight {
+      color: #a855f7;
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      color: #9ca3af;
+      line-height: 1.6;
+      margin-bottom: 36px;
+      max-width: 420px;
+    }
+
+    /* Feature icons */
+    .features-grid {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-align: center;
+    }
+
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      background: #1a1a2e;
+      border: 1px solid #ffffff15;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: #a855f7;
+    }
+
+    .feature-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .feature-desc {
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    /* Robot illustration area */
+    .robot-area {
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-60%);
+      width: 240px;
+      height: 240px;
+      pointer-events: none;
+    }
+
+    .robot-circle {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #3b1d8a40, #1a0a4a80);
+      border: 1px solid #7c3aed30;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin: 20px auto;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .robot-emoji {
+      font-size: 90px;
+      filter: drop-shadow(0 0 30px #7c3aed80);
+    }
+
+    .floating-icon {
+      position: absolute;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      animation: floatIcon 4s ease-in-out infinite;
+    }
+
+    .fi-chatgpt {
+      background: linear-gradient(135deg, #10a37f, #1a7a5e);
+      top: 10px;
+      left: 10px;
+      animation-delay: 0s;
+    }
+
+    .fi-star {
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      top: 0;
+      right: 20px;
+      animation-delay: 1s;
+    }
+
+    @keyframes floatIcon {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(5deg); }
+    }
+
+    /* Review card */
+    .review-card {
+      background: #1a1a2e;
+      border: 1px solid #ffffff10;
+      border-radius: 16px;
+      padding: 16px 20px;
+      max-width: 300px;
+    }
+
+    .stars {
+      color: #f59e0b;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .stars span {
+      color: #9ca3af;
+      font-size: 13px;
+      margin-left: 6px;
+      font-weight: 600;
+    }
+
+    .review-text {
+      font-size: 13px;
+      color: #9ca3af;
+      line-height: 1.5;
+    }
+
+    /* ── RIGHT SIDE — LOGIN CARD ── */
+    .right-side {
+      width: 420px;
+      flex-shrink: 0;
+    }
+
+    .login-card {
+      background: #12122a;
+      border: 1px solid #ffffff12;
+      border-radius: 20px;
+      padding: 36px 32px;
+    }
+
+    .card-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .card-sub {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 28px;
+    }
+
+    /* Google button */
+    .google-btn {
+      width: 100%;
+      padding: 13px;
+      background: #fff;
+      border: none;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #1f2937;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.2s;
+      margin-bottom: 20px;
+    }
+
+    .google-btn:hover {
+      background: #f3f4f6;
+      box-shadow: 0 4px 20px rgba(255,255,255,0.1);
+    }
+
+    .google-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #374151;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #ffffff12;
+    }
+
+    /* Form */
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      font-size: 13px;
+      font-weight: 500;
+      color: #9ca3af;
+    }
+
+    .input-wrapper {
+      display: flex;
+      align-items: center;
+      background: #1e1e35;
+      border: 1px solid #ffffff15;
+      border-radius: 10px;
+      padding: 12px 14px;
+      gap: 10px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .input-wrapper:focus-within {
+      border-color: #7c3aed;
+      box-shadow: 0 0 0 3px #7c3aed20;
+    }
+
+    .input-wrapper i {
+      color: #4b5563;
+      font-size: 14px;
+      width: 16px;
+    }
+
+    .input-wrapper input {
+      flex: 1;
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      color: #e5e7eb;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .input-wrapper input::placeholder { color: #4b5563; }
+
+    .toggle-pass {
+      background: none;
+      border: none;
+      color: #4b5563;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 0;
+      transition: color 0.2s;
+    }
+
+    .toggle-pass:hover { color: #a855f7; }
+
+    /* Form row */
+    .form-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #6b7280;
+      cursor: pointer;
+    }
+
+    .checkbox-label input[type="checkbox"] {
+      width: 15px;
+      height: 15px;
+      accent-color: #7c3aed;
+      cursor: pointer;
+    }
+
+    .forgot-link {
+      font-size: 13px;
+      color: #a855f7;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .forgot-link:hover { text-decoration: underline; }
+
+    /* Login button */
+    .login-btn {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #7c3aed, #ec4899);
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 16px;
+    }
+
+    .login-btn:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(124, 58, 237, 0.4);
+    }
+
+    .login-btn:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    /* Security note */
+    .security-note {
+      text-align: center;
+      font-size: 12px;
+      color: #4b5563;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    /* Auth message */
+    .auth-message {
+      border-radius: 8px;
+      font-size: 13px;
+      display: none;
+      margin-bottom: 16px;
+    }
+
+    .auth-message.error {
+      background: #7f1d1d30;
+      color: #fca5a5;
+      border: 1px solid #dc262630;
+      padding: 10px 14px;
+      display: block;
+    }
+
+    .auth-message.success {
+      background: #064e3b30;
+      color: #6ee7b7;
+      border: 1px solid #05966930;
+      padding: 10px 14px;
+      display: block;
+    }
+
+    /* Background dots decoration */
+    .bg-dots {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .dot {
+      position: absolute;
+      border-radius: 50%;
+      background: #7c3aed;
+      opacity: 0.15;
+    }
+
+    .dot1 { width: 4px; height: 4px; top: 15%; left: 45%; }
+    .dot2 { width: 3px; height: 3px; top: 30%; left: 60%; }
+    .dot3 { width: 5px; height: 5px; top: 60%; left: 40%; }
+    .dot4 { width: 3px; height: 3px; top: 80%; left: 55%; }
+    .dot5 { width: 4px; height: 4px; top: 45%; left: 30%; }
+
+    .page-wrapper, .navbar { position: relative; z-index: 1; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .page-wrapper {
+        flex-direction: column;
+        padding: 20px;
+        align-items: stretch;
+      }
+
+      .right-side {
+        width: 100%;
+      }
+
+      .robot-area {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: 36px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar { padding: 16px 20px; }
+      .hero-title { font-size: 28px; }
+      .login-card { padding: 24px 20px; }
+      .features-grid { gap: 10px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, .robot-circle, .floating-icon { animation: none !important; transition: none !important; }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="bg-blur"></div>
-
-<div class="container">
-
-<!-- LEFT -->
-
-<div class="left">
-
-<div class="logo">
-
-<i class="fa-solid fa-bolt"></i>
-
-<span>AI Tools Hub</span>
-
+<!-- Background decoration -->
+<div class="bg-dots">
+  <div class="dot dot1"></div>
+  <div class="dot dot2"></div>
+  <div class="dot dot3"></div>
+  <div class="dot dot4"></div>
+  <div class="dot dot5"></div>
 </div>
 
-<div class="badge">
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="#" class="nav-logo">
+    <div class="logo-box">⚡</div>
+    AI Tools Hub
+  </a>
+  <div class="nav-right">
+    Don't have an account?
+    <a href="signup.html">Sign Up</a>
+  </div>
+</nav>
 
-Trusted by 10K+ AI Enthusiasts
+<!-- MAIN -->
+<div class="page-wrapper">
 
-</div>
+  <!-- LEFT -->
+  <div class="left-side">
 
-<h1>
-
-150+ AI Tools
-
-<span>In One Place</span>
-
-</h1>
-
-<p>
-
-Explore the best Free, Paid and Premium AI tools.
-
-Save favourites, filter smarter and boost productivity.
-
-</p>
-
-<div class="features">
-
-<div class="feature">
-
-<i class="fa-solid fa-table-cells-large"></i>
-
-<h3>150+ AI Tools</h3>
-
-<p>Curated Collection</p>
-
-</div>
-
-<div class="feature">
-
-<i class="fa-solid fa-heart"></i>
-
-<h3>Favorites</h3>
-
-<p>Save & Organize</p>
-
-</div>
-
-<div class="feature">
-
-<i class="fa-solid fa-filter"></i>
-
-<h3>Smart Filter</h3>
-
-<p>Easy Search</p>
-
-</div>
-
-<div class="feature">
-
-<i class="fa-solid fa-moon"></i>
-
-<h3>Dark Mode</h3>
-
-<p>Beautiful UI</p>
-
-</div>
-
-</div>
-
-<div class="review">
-
-★★★★★
-
-<span>
-
-4.8/5 from 2K+ users
-
-</span>
-
-<p>
-
-"This platform has become my favourite place to discover AI tools."
-
-</p>
-
-</div>
-
-</div>
-
-<!-- RIGHT -->
-
-<div class="right">
-
-<div class="login-card">
-<h2 class="login-title">
-    Welcome Back <span>👋</span>
-</h2>
-
-<p class="login-subtitle">
-    Sign in to your account to continue
-</p>
-
-<!-- Google Login -->
-<button class="google-btn" onclick="loginWithGoogle()">
-    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg">
-    Continue with Google
-</button>
-
-<div class="divider">
-    <span>or continue with email</span>
-</div>
-
-<!-- Email -->
-<div class="input-group">
-    <label>Email Address</label>
-
-    <div class="input-box">
-        <i class="fas fa-envelope"></i>
-
-        <input
-            type="email"
-            id="loginEmail"
-            placeholder="your@email.com">
+    <!-- Trusted badge -->
+    <div class="trusted-badge">
+      <div class="avatar-stack">
+        <div class="av av1">J</div>
+        <div class="av av2">S</div>
+        <div class="av av3">R</div>
+      </div>
+      <span>Trusted by 10K+ AI Enthusiasts</span>
+      <span class="badge-count">10K+</span>
     </div>
-</div>
 
-<!-- Password -->
-<div class="input-group">
-    <label>Password</label>
+    <!-- Hero -->
+    <h1 class="hero-title">
+      150+ AI Tools<br>
+      In <span class="highlight">One Place</span>
+    </h1>
 
-    <div class="input-box">
+    <p class="hero-sub">
+      Explore the best Free, Paid, and Premium AI tools.<br>
+      Save favorites, filter smartly, and boost your productivity.
+    </p>
 
-        <i class="fas fa-lock"></i>
+    <!-- Features -->
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon"><i class="fa-solid fa-border-all"></i></div>
+        <div class="feature-label">150+ AI Tools</div>
+        <div class="feature-desc">Curated collection</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon" style="color:#ec4899"><i class="fa-solid fa-heart"></i></div>
+        <div class="feature-label">Favorites Save</div>
+        <div class="feature-desc">Save &amp; organize</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon" style="color:#3b82f6"><i class="fa-solid fa-filter"></i></div>
+        <div class="feature-label">Smart Filter</div>
+        <div class="feature-desc">Find tools easily</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon" style="color:#8b5cf6"><i class="fa-solid fa-moon"></i></div>
+        <div class="feature-label">Dark Mode</div>
+        <div class="feature-desc">Better experience</div>
+      </div>
+    </div>
 
-        <input
-            type="password"
-            id="loginPassword"
-            placeholder="••••••••">
+    <!-- Review -->
+    <div class="review-card">
+      <div class="stars">
+        ★★★★★ <span>4.8/5 from 2K+ users</span>
+      </div>
+      <div class="review-text">
+        "This platform has become my go-to place<br>for discovering the best AI tools."
+      </div>
+    </div>
 
-        <button
-            class="toggle-password"
-            onclick="togglePassword('loginPassword')">
+    <!-- Robot illustration -->
+    <div class="robot-area">
+      <div style="position:relative; width:240px;">
+        <div class="floating-icon fi-chatgpt">🤖</div>
+        <div class="floating-icon fi-star">✳️</div>
+        <div class="robot-circle">
+          <span class="robot-emoji">🤖</span>
+        </div>
+      </div>
+    </div>
 
-            <i class="fas fa-eye"></i>
+  </div>
 
-        </button>
+  <!-- RIGHT — LOGIN CARD -->
+  <div class="right-side">
+    <div class="login-card">
+
+      <h2 class="card-title">Welcome Back 👋</h2>
+      <p class="card-sub">Sign in to your account to continue</p>
+
+      <!-- Auth message -->
+      <div class="auth-message" id="authMessage"></div>
+
+      <!-- Google -->
+      <button class="google-btn" onclick="loginWithGoogle()">
+        <svg class="google-icon" viewBox="0 0 24 24">
+          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+        Continue with Google
+      </button>
+
+      <!-- Divider -->
+      <div class="divider">or continue with email</div>
+
+      <!-- Form -->
+      <div class="form-group">
+        <label for="loginEmail">Email Address</label>
+        <div class="input-wrapper">
+          <i class="fa-regular fa-envelope"></i>
+          <input type="email" id="loginEmail" placeholder="your@email.com" autocomplete="email"/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="loginPassword">Password</label>
+        <div class="input-wrapper">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" id="loginPassword" placeholder="••••••••••" autocomplete="current-password"/>
+          <button class="toggle-pass" onclick="togglePassword('loginPassword')" type="button" aria-label="Toggle password">
+            <i class="fa-regular fa-eye"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label class="checkbox-label">
+          <input type="checkbox" id="rememberMe"/>
+          Remember me
+        </label>
+        <a href="forgot-password.html" class="forgot-link">Forgot Password?</a>
+      </div>
+
+      <button class="login-btn" onclick="loginWithEmail()">
+        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+        Login
+      </button>
+
+      <div class="security-note">
+        <i class="fa-solid fa-lock" style="font-size:11px;"></i>
+        Your data is secure with us
+      </div>
 
     </div>
-</div>
-
-<!-- Remember -->
-<div class="form-options">
-
-<label>
-
-<input
-type="checkbox"
-id="rememberMe">
-
-Remember me
-
-</label>
-
-<a href="#">
-Forgot Password?
-</a>
-
-</div>
-
-<!-- Login -->
-<button
-class="login-btn"
-onclick="loginWithEmail()">
-
-<i class="fas fa-sign-in-alt"></i>
-
-Login
-
-</button>
-
-<p class="signup-link">
-
-Don't have an account?
-
-<a href="signup.html">
-Sign Up
-</a>
-
-</p>
-
-<div
-id="authMessage"
-class="auth-message">
-</div>
-
-<h2>
-
-Welcome Back 👋
-
-</h2>
-
-<p>
-
-Sign in to continue
-
-</p>
-
-<div id="authMessage"></div>
-
-<button class="google-btn" onclick="loginWithGoogle()">
-
-<img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg">
-
-Continue with Google
-
-</button>
-
-<div class="divider">
-
-<span>or continue with email</span>
-
-</div>
-
-<div class="input-box">
-
-<label>Email Address</label>
-
-<input
-type="email"
-id="loginEmail"
-placeholder="your@email.com">
-
-</div>
-
-<div class="input-box">
-
-<label>Password</label>
-
-<input
-type="password"
-id="loginPassword"
-placeholder="••••••••">
-
-</div>
-
-<div class="options">
-
-<label>
-
-<input type="checkbox">
-
-Remember me
-
-</label>
-
-<a href="#">
-
-Forgot Password?
-
-</a>
-
-</div>
-
-<button
-
-class="login-btn"
-
-onclick="loginWithEmail()">
-
-<i class="fa-solid fa-right-to-bracket"></i>
-
-Login
-
-</button>
-
-<div class="signup">
-
-Don't have an account?
-
-<a href="signup.html">
-
-Sign Up
-
-</a>
-
-</div>
-
-</div>
-
-</div>
+  </div>
 
 </div>
 
 <script type="module" src="js/auth.js"></script>
 
 </body>
-
 </html>
