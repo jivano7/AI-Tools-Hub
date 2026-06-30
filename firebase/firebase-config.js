@@ -4,7 +4,7 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase
 
 const firebaseConfig = {
   apiKey: "AIzaSyDhwooW5LUW-xVM_4SzbI6hmiPZz2PbCYU",
-    authDomain: "jivano7.github.io",
+    authDomain: "ai-tools-hub-28a98.firebaseapp.com",
       projectId: "ai-tools-hub-28a98",
         storageBucket: "ai-tools-hub-28a98.firebasestorage.app",
           messagingSenderId: "315107834555",
