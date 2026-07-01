@@ -180,3 +180,16 @@ window.resetPassword = async function () {
     }
   }
 };
+
+catch (error) {
+  console.log(error.code);
+  console.log(error.message);
+
+  if (error.code === 'auth/user-not-found') {
+    showMessage('This email is not registered');
+  } else if (error.code === 'auth/wrong-password') {
+    showMessage('Wrong password');
+  } else {
+    showMessage('Login fail: ' + error.message);
+  }
+}
