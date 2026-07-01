@@ -158,3 +158,28 @@ window.logoutUser = async function () {
     console.error(error);
   }
 };
+
+window.resetPassword = async function () {
+
+  const email = document.getElementById("loginEmail").value.trim();
+
+  if (!email) {
+    showMessage("Please enter your email first.");
+    return;
+  }
+
+  try {
+    await sendPasswordResetEmail(auth, email);
+    showMessage("Password reset email sent. Check your inbox.", "success");
+  } catch (error) {
+    console.error(error);
+
+    if (error.code === "auth/user-not-found") {
+      showMessage("No account found with this email.");
+    } else if (error.code === "auth/invalid-email") {
+      showMessage("Invalid email address.");
+    } else {
+      showMessage("Unable to send password reset email.");
+    }
+  }
+};
