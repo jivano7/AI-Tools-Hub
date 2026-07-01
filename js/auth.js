@@ -47,12 +47,20 @@ function showMessage(msg, type = 'error') {
 // ===== GOOGLE LOGIN =====
 window.loginWithGoogle = async function () {
   try {
+
+    googleProvider.setCustomParameters({
+      prompt: "select_account"
+    });
+
     const result = await signInWithPopup(auth, googleProvider);
+
     await saveUserToFirestore(result.user);
+
     showMessage('Login successful!', 'success');
+
     setTimeout(() => window.location.href = 'index.html', 1500);
+
   } catch (error) {
-    // FIX: No error.message exposed to user
     console.error('Google login error:', error);
     showMessage('Google login failed. Please try again.', 'error');
   }
@@ -143,8 +151,9 @@ window.togglePassword = function (inputId) {
 
 // ===== LOGOUT =====
 window.logoutUser = async function () {
-  await signOut(auth);
-  // FIX: localStorage.clear() removed — only specific keys should be cleared
-  // localStorage.removeItem('yourSpecificKey'); // uncomment if needed
-  window.location.href = 'login.html';
+    await signOut(auth);
+
+    await auth.signOut();
+
+    window.location.href = "login.html";
 };
