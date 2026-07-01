@@ -69,33 +69,29 @@ window.loginWithGoogle = async function () {
 
 // ===== EMAIL LOGIN =====
 window.loginWithEmail = async function () {
-  const email = document.getElementById('loginEmail').value.trim();
-  // FIX: Added .trim() to password as well
-  const password = document.getElementById('loginPassword').value.trim();
+const email = document.getElementById('loginEmail').value.trim();
+const password = document.getElementById('loginPassword').value;
 
-  if (!email || !password) {
-    showMessage('Please enter email and password');
-    return;
-  }
+if (!email || !password) {
+showMessage('Enter both email and password');
+return;
+}
 
-  try {
-    await signInWithEmailAndPassword(auth, email, password);
-    showMessage('Login successful!', 'success');
-    setTimeout(() => window.location.href = 'index.html', 1500);
-  } catch (error) {
-    console.error('Email login error:', error);
-    // FIX: Updated deprecated error codes + no error.message to user
-    if (error.code === 'auth/invalid-credential' || error.code === 'auth/user-not-found') {
-      showMessage('Invalid email or password. Please try again.');
-    } else if (error.code === 'auth/wrong-password') {
-      showMessage('Invalid email or password. Please try again.');
-    } else if (error.code === 'auth/too-many-requests') {
-      showMessage('Too many attempts. Please try again later.');
-    } else {
-      showMessage('Login failed. Please try again.');
-    }
-  }
+try {
+await signInWithEmailAndPassword(auth, email, password);
+showMessage('Login successful!', 'success');
+setTimeout(() => window.location.href = 'index.html', 1500);
+} catch (error) {
+if (error.code === 'auth/user-not-found') {
+showMessage('This email is not registered');
+} else if (error.code === 'auth/wrong-password') {
+showMessage('wrong Password');
+} else {
+showMessage('Login fail: ' + error.message);
+}
+}
 };
+
 
 // ===== SIGNUP =====
 window.signupWithEmail = async function () {
