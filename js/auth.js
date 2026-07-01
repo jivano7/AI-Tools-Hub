@@ -151,9 +151,10 @@ window.togglePassword = function (inputId) {
 
 // ===== LOGOUT =====
 window.logoutUser = async function () {
+  try {
     await signOut(auth);
-
-    await auth.signOut();
-
     window.location.href = "login.html";
+  } catch (error) {
+    console.error(error);
+  }
 };
